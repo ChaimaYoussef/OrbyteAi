@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapport de Stage — Orbyte</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="report_style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapport de Stage — Orbyte</h1>
+</header>
+<h1 id="rapport-de-stage-système-rag-orbyte">Rapport de Stage — Système RAG Orbyte</h1>
+<p><strong>Établissement d’accueil :</strong> SESAME Innovation Lab<br />
+<strong>Encadrant :</strong> Dr. Amine OTHMAN<br />
+<strong>Période du stage :</strong> Été 2026<br />
+<strong>Équipe stagiaires :</strong> Asma, Ahmed, Chayma, Mohamed, Rayane, Aziz</p>
+<hr />
+<h2 id="introduction-et-contexte">1. Introduction et contexte</h2>
+<p>Ce stage s’inscrit dans le cadre du projet Orbyte, une plateforme d’intelligence artificielle conversationnelle développée au sein du laboratoire SESAME dans le cadre du Challenge Projets d’Entreprendre. Le projet part d’un constat simple : les employés perdent chaque jour un temps considérable à rechercher des informations déjà existantes au sein de leur entreprise, faute d’un point d’accès unique à la documentation interne. Orbyte propose d’y répondre par un agent IA dédié à la connaissance interne de chaque entreprise, capable de centraliser ses documents et d’y répondre de façon conversationnelle, fiable et entièrement sécurisée en local.</p>
+<p>Un premier prototype avait été développé en amont du stage. L’audit initial de ce prototype a mis en évidence des limites structurelles rédhibitoires, conduisant à la décision de reconstruire le système intégralement depuis zéro.</p>
+<hr />
+<h2 id="diagnostic-initial-limites-du-prototype-orbyte-v1">2. Diagnostic initial : limites du prototype Orbyte v1</h2>
+<p>L’audit du premier prototype a identifié quatre catégories de problèmes :</p>
+<ol type="1">
+<li><strong>Chunking fragile</strong> : le découpage des documents reposait sur des séparateurs de chaînes de caractères fixes, sans prise en compte de la nature sémantique du contenu ni du type de section (texte libre, tableau, image).</li>
+<li><strong>Recherche dense uniquement</strong> : le prototype n’effectuait que de la recherche vectorielle (dense), sans recherche par mots-clés, rendant les requêtes précises ou factuelles peu efficaces.</li>
+<li><strong>Filtrage des permissions peu fiable</strong> : la gestion des droits d’accès aux documents n’était pas intégrée au pipeline de retrieval, exposant potentiellement des documents confidentiels.</li>
+<li><strong>Architecture éclatée entre trois stacks</strong> : la logique métier était distribuée de manière incohérente entre des composants Java et Python, rendant la maintenance et l’évolution du système très complexes.</li>
+</ol>
+<hr />
+<h2 id="décisions-darchitecture-pourquoi-une-reconstruction-complète">3. Décisions d’architecture : pourquoi une reconstruction complète</h2>
+<p>Face à ces limites, la décision de reconstruction complète a été justifiée par : - L’impossibilité de corriger le chunking et le retrieval sans réécrire l’intégralité du pipeline d’ingestion. - La nécessité d’unifier le backend en un seul langage (Python) pour éliminer la dette technique et la duplication. - L’adoption d’un modèle d’indexation hybride (vectoriel + mots-clés) supporté nativement par les moteurs de recherche modernes. - La volonté d’intégrer dès la conception un modèle de permissions robuste, appliqué directement au niveau du moteur de recherche.</p>
+<hr />
+<h2 id="travail-réalisé">4. Travail réalisé</h2>
+<h3 id="architecture-générale">4.1 Architecture générale</h3>
+<p><strong>Confirmation de l’unification backend en Python.</strong> L’intégralité du backend a été refondue en Python 3.13. Toute logique redondante issue d’anciennes piles a été supprimée au profit d’une stack moderne et homogène :</p>
+<ul>
+<li><strong>FastAPI</strong> : serveur d’API REST haute performance (point d’entrée principal de l’application, orchestré via Uvicorn en mode asynchrone).</li>
+<li><strong>SQLAlchemy + Alembic</strong> : couche d’accès aux données relationnelles (ORM) et système de migrations incrémentales de schéma.</li>
+<li><strong>Celery</strong> : moteur d’exécution de tâches asynchrones en arrière-plan, gérant les files d’attente distribuées.</li>
+<li><strong>Supervisord</strong> : gestionnaire et superviseur multi-processus au sein des conteneurs d’application.</li>
+</ul>
+<p><strong>Organisation modulaire du backend :</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module / Sous-système</th>
+<th>Rôle technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ingestion &amp; Indexation</td>
+<td>Pipeline de chunking multimodal, calcul d’embeddings et insertion vectorielle</td>
+</tr>
+<tr class="even">
+<td>Moteur d’indexation</td>
+<td>Abstraction unifiée et connecteurs vers OpenSearch et Vespa</td>
+</tr>
+<tr class="odd">
+<td>Recherche &amp; Retrieval</td>
+<td>Pipeline de recherche hybride (dense + creuse), filtres d’accès ACL et réordonnancement (reranking)</td>
+</tr>
+<tr class="even">
+<td>Traitement asynchrone</td>
+<td>Gestion des workers Celery, ordonnanceur de tâches périodiques et gestion des files d’attente</td>
+</tr>
+<tr class="odd">
+<td>Authentification</td>
+<td>Gestion des utilisateurs, tokens JWT, OAuth2, clés d’API et contrôle de session</td>
+</tr>
+<tr class="even">
+<td>Sécurité &amp; DLP</td>
+<td>Détection de fuites de données sensibles (Data Loss Prevention) et audit</td>
+</tr>
+<tr class="odd">
+<td>Outils agentiques</td>
+<td>Contrat d’interface et moteur d’exécution d’outils pour agents IA</td>
+</tr>
+<tr class="even">
+<td>Deep Research</td>
+<td>Agent autonome de recherche approfondie avec boucle multi-étapes</td>
+</tr>
+<tr class="odd">
+<td>Coding Agent</td>
+<td>Agent de génération et d’exécution sécurisée de code</td>
+</tr>
+<tr class="even">
+<td>Connecteurs</td>
+<td>Passerelles d’extraction vers les sources documentaires tierces</td>
+</tr>
+<tr class="odd">
+<td>Modèles relationnels</td>
+<td>Schémas relationnels et persistance PostgreSQL</td>
+</tr>
+<tr class="even">
+<td>Fournisseurs LLM</td>
+<td>Abstraction unifiée des modèles de langage (locaux et distants)</td>
+</tr>
+<tr class="odd">
+<td>Bibliothèque de prompts</td>
+<td>Centralisation et paramétrage des invites système (<em>system prompts</em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pipeline-dingestion-et-chunking-multimodal">4.2 Pipeline d’ingestion et chunking multimodal</h3>
+<p><strong>Stratégie de découpage sémantique adaptée à chaque nature de contenu :</strong></p>
+<p>Le système met en œuvre un orchestrateur de chunking qui aiguille chaque section du document vers un découpeur spécialisé selon la typologie détectée :</p>
+<ul>
+<li><strong>Découpage textuel (<code>TextChunker</code>)</strong> : s’appuie sur la bibliothèque spécialisée <strong>Chonkie</strong> (<code>SentenceChunker</code>) pour opérer un découpage respectueux de la syntaxe et des limites de phrases. Il gère dynamiquement l’accumulation en mémoire tampon selon le budget de tokens, la segmentation contrôlée des passages denses et la continuité contextuelle entre blocs.</li>
+<li><strong>Découpage visuel (<code>ImageChunker</code>)</strong> : chaque image forme une unité documentaire autonome référencée par un identifiant unique, avec la capacité d’adjoindre une description sémantique générée par un modèle de vision multimodal.</li>
+<li><strong>Découpage tabulaire (<code>TabularChunker</code>)</strong> : dédié aux feuilles de calcul et formats CSV. Chaque ligne est modélisée sous format clé-valeur (<code>en-tête=valeur</code>), enrichie par un algorithme d’analyse structurelle préalable qui conserve la signification des métadonnées du tableau.</li>
+</ul>
+<p><strong>Paramètres clés du pipeline d’ingestion :</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paramètre</th>
+<th>Valeur</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Limite de tokens par chunk</td>
+<td>Calibrée sur la fenêtre de contexte du modèle d’embedding</td>
+<td>Évite la troncature d’information lors du calcul vectoriel</td>
+</tr>
+<tr class="even">
+<td>Chevauchement (<em>Overlap</em>)</td>
+<td><code>0</code> (aucun chevauchement)</td>
+<td>Choix architectural explicite évitant la redondance d’indexation</td>
+</tr>
+<tr class="odd">
+<td>Taille de l’extrait (<em>Blurb</em>)</td>
+<td>128 tokens</td>
+<td>Résumé rapide pour l’affichage synthétique des résultats</td>
+</tr>
+<tr class="even">
+<td>Part maximale de métadonnées</td>
+<td>25 %</td>
+<td>Garantit qu’au moins 75 % du chunk est constitué de contenu textuel utile</td>
+</tr>
+<tr class="odd">
+<td>Seuil minimal de contenu</td>
+<td>256 tokens</td>
+<td>Élimine les micro-fragments non significatifs</td>
+</tr>
+<tr class="even">
+<td>Profondeur de réordonnancement</td>
+<td>1 000 candidats</td>
+<td>Volume de documents pré-sélectionnés soumis au reranker</td>
+</tr>
+</tbody>
+</table>
+<p>Le pipeline intègre également une option de <strong>Contextual RAG</strong> permettant de générer automatiquement des résumés contextuels par LLM en amont de l’indexation.</p>
+<h3 id="recherche-hybride-et-réordonnancement-reranking">4.3 Recherche hybride et réordonnancement (Reranking)</h3>
+<p><strong>Recherche hybride équilibrée.</strong> Pour pallier les angles morts de la recherche purement vectorielle, le système combine systématiquement la recherche dense (sémantique) et la recherche creuse (BM25 par mots-clés) via un coefficient d’équilibrage :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>HYBRID_ALPHA <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, <span class="bu">min</span>(<span class="dv">1</span>, <span class="bu">float</span>(os.environ.get(<span class="st">&quot;HYBRID_ALPHA&quot;</span>) <span class="kw">or</span> <span class="fl">0.5</span>)))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 0 = recherche exclusive par mots-clés, 1 = recherche purement vectorielle, 0.5 = équilibre</span></span></code></pre></div>
+<p>Le moteur de recherche orchestre la requête en extrayant simultanément les vecteurs d’embedding et les termes significatifs (après élimination des mots vides via NLTK). Lorsque la recherche est sollicitée par un agent autonome, la fusion des listes de résultats s’effectue via l’algorithme <strong>RRF</strong> (<em>Reciprocal Rank Fusion</em>, constante k = 50).</p>
+<p><strong>Réordonnancement sémantique (Reranking).</strong> Une étape de reranking affine les documents pré-sélectionnés avant transmission au LLM. Le composant supporte : - L’intégration de modèles distants spécialisés (API Cohere, AWS Bedrock). - L’utilisation de passerelles unifiées (LiteLLM) pour les modèles hébergés ou tiers. - L’interrogation d’un serveur d’inférence local dédié à haute performance.</p>
+<h3 id="infrastructure-et-conteneurisation">4.4 Infrastructure et conteneurisation</h3>
+<p>L’ensemble des services nécessaires au fonctionnement du système est orchestré via une flotte de conteneurs Docker :</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Service</th>
+<th>Rôle opérationnel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Serveur d’API</td>
+<td>Exécution de l’application FastAPI, endpoints REST et contrôle d’accès</td>
+</tr>
+<tr class="even">
+<td>Workers d’arrière-plan</td>
+<td>Exécution asynchrone supervisée des pipelines d’ingestion et de maintenance</td>
+</tr>
+<tr class="odd">
+<td>Interface Web</td>
+<td>Application moderne Next.js pour les interactions utilisateurs</td>
+</tr>
+<tr class="even">
+<td>Serveur d’inférence</td>
+<td>Service dédié au calcul local des embeddings et des opérations de reranking</td>
+</tr>
+<tr class="odd">
+<td>Base relationnelle</td>
+<td>Instance PostgreSQL dédiée au stockage des métadonnées, sessions et configurations</td>
+</tr>
+<tr class="even">
+<td>Moteur de recherche</td>
+<td>Cluster OpenSearch pour l’indexation hybride (vecteurs k-NN et BM25)</td>
+</tr>
+<tr class="odd">
+<td>Mémoire cache &amp; Broker</td>
+<td>Instance Redis pour la distribution des tâches Celery et le cache applicatif</td>
+</tr>
+<tr class="even">
+<td>Reverse Proxy</td>
+<td>Nginx gérant le routage, la terminaison réseau et la sécurité des ports</td>
+</tr>
+<tr class="odd">
+<td>Stockage d’objets</td>
+<td>Instance MinIO (compatible protocole S3) pour la persistance des fichiers bruts</td>
+</tr>
+<tr class="even">
+<td>Sandbox d’exécution</td>
+<td>Environnement isolé d’exécution de code Python pour les agents</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exploitation des ressources de calcul locales :</strong> Le modèle de génération principal (Qwen 2.5 14B) est servi directement sur l’environnement hôte via Ollama, permettant au système d’exploiter la totalité des capacités d’accélération matérielle (GPU) sans surcoût de virtualisation.</p>
+<h3 id="traitement-asynchrone-et-planification">4.5 Traitement asynchrone et planification</h3>
+<p>Afin de garantir une interface utilisateur réactive lors de l’ingestion de volumineux corpus documentaires, tous les traitements lourds sont délégués à des workers asynchrones organisés en files spécialisées :</p>
+<ul>
+<li><strong>Coordinateur principal</strong> : analyse périodiquement l’état des connecteurs documentaires.</li>
+<li><strong>Workers légers</strong> : dédiés aux opérations rapides à haute concurrence (synchronisation de statuts, suppressions).</li>
+<li><strong>Workers intensifs</strong> : affectés aux calculs longs à concurrence restreinte (génération de rapports, purges).</li>
+<li><strong>Workers d’ingestion documentaire</strong> : dédiés au chunking, à l’inférence d’embedding et à l’écriture vectorielle.</li>
+<li><strong>Workers de collecte</strong> : gèrent les requêtes vers les API des sources de données externes.</li>
+<li><strong>Workers de fichiers utilisateurs</strong> : prennent en charge les documents soumis en direct dans le chat.</li>
+<li><strong>Supervision &amp; Watchdog</strong> : un mécanisme de surveillance automatisé garantit la résilience des ordonnanceurs et redémarre les processus en cas de défaillance.</li>
+</ul>
+<h3 id="authentification-et-contrôle-daccès-rbac-acl">4.6 Authentification et contrôle d’accès (RBAC / ACL)</h3>
+<p><strong>Authentification complète :</strong> La couche d’authentification s’appuie sur le standard OAuth2 avec jetons JWT signés, gestion des clés API personnelles (PAT), invitations d’utilisateurs, validation des domaines d’adresses et limitation de débit (<em>rate limiting</em>).</p>
+<p><strong>Permissions à granularité fine :</strong> Le modèle de droits repose sur un principe d’implication hiérarchique où les prérogatives supérieures englobent automatiquement les privilèges subordonnés. Des rôles spécifiques ont été formalisés (<code>AGENT_CREATOR</code>, <code>SECURITY_AUDITOR</code>, <code>DOCUMENT_MANAGER</code>).</p>
+<p><strong>Filtrage ACL strict à la source :</strong> La sécurité des documents repose sur un filtrage appliqué directement au niveau de la requête au moteur de recherche. La liste de contrôle d’accès de l’utilisateur est injectée comme filtre obligatoire dans la requête d’indexation : un utilisateur ne peut ainsi jamais récupérer, même partiellement, un chunk auquel son profil n’a pas explicitement droit. Par défaut, seuls les documents étiquetés publics sont interrogeables.</p>
+<p><strong>Protection contre les fuites de données (DLP) :</strong> Un sous-système de contrôle analyse les invites des utilisateurs afin d’intercepter les données sensibles (informations bancaires, secrets d’authentification, identifiants administratifs ou mentions confidentielles) avant qu’elles ne soient relayées.</p>
+<h3 id="création-dagents-métier-personnalisés-personas">4.7 Création d’agents métier personnalisés (<em>Personas</em>)</h3>
+<p>Orbyte dépasse le cadre d’un simple chatbot généraliste en permettant de créer et de déployer des <strong>agents IA spécialisés</strong> pour des missions de travail concrètes (par exemple : un <strong>agent de synthèse</strong> pour résumer des réunions et extraire les plans d’action, un agent d’onboarding RH ou un assistant d’analyse documentaire).</p>
+<p>Chaque agent se configure simplement selon quatre critères : - <strong>Rôle et directives (<em>Prompts</em>) :</strong> Définition précise de sa posture, du ton attendu et du livrable souhaité. - <strong>Périmètre documentaire dédié :</strong> Restriction de sa recherche à des dossiers ou documents précis de l’entreprise pour éviter toute pollution hors sujet. - <strong>Outils associés :</strong> Activation sélective des fonctionnalités d’action (recherche interne avec réordonnancement, recherche web, calcul). - <strong>Partage et contrôle d’accès :</strong> L’agent peut rester privé pour son créateur, être partagé avec une équipe ou être publié dans le catalogue d’entreprise (rôle <code>AGENT_CREATOR</code>).</p>
+<h3 id="déploiement-et-réseau-local">4.8 Déploiement et réseau local</h3>
+<p><strong>Conteneurisation multi-étapes :</strong> La construction des conteneurs applicatifs s’appuie sur une séparation stricte entre la phase de compilation (gestion des dépendances avec vérification cryptographique des sommes de contrôle) et la phase d’exécution allégée, exécutée sous utilisateur système restreint sans privilèges d’administration.</p>
+<p><strong>Déploiement sur réseau local (LAN) :</strong> Un script d’initialisation détecte dynamiquement l’adresse IP de la machine hôte sur le réseau d’établissement et configure automatiquement les domaines autorisés ainsi que les règles de partage de ressources (CORS). Grâce à l’usage de sous-domaines à résolution dynamique, l’ensemble des utilisateurs connectés au réseau local peuvent accéder à la plateforme sans nécessiter d’infrastructure DNS dédiée.</p>
+<p><strong>Sécurité de l’exposition réseau :</strong> Seuls les ports d’entrée du reverse proxy Nginx sont exposés sur les interfaces réseau. La base de données, la mémoire cache, le stockage objet et les services d’inférence restent confinés dans le réseau virtuel interne de conteneurs.</p>
+<h3 id="analyse-de-la-couverture-de-tests">4.9 Analyse de la couverture de tests</h3>
+<blockquote>
+<p><strong>Constat technique — Nécessité de formalisation d’une suite de tests dédiée.</strong></p>
+</blockquote>
+<p>L’analyse de l’infrastructure de tests démontre que le socle de tests présent dans le dépôt est issu du cadre technique générique et ne couvre pas encore spécifiquement les modules personnalisés créés pendant le stage (règles de rôles personnalisées, module de contrôle DLP, particularités du découpage tabulaire et configuration réseau dynamique).</p>
+<p>Ce point constitue le <strong>chantier prioritaire</strong> avant tout passage en phase pilote opérationnelle, afin de garantir l’absence de régression lors des montées de version.</p>
+<hr />
+<h2 id="bilan-davancement-et-synthèse-technique">5. Bilan d’avancement et synthèse technique</h2>
+<h3 id="composants-opérationnels-et-finalisés">Composants opérationnels et finalisés</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fonctionnalité</th>
+<th>Niveau de maturité</th>
+<th>Réalisation technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Architecture backend unifiée</td>
+<td>Terminé</td>
+<td>Stack 100 % Python, FastAPI, ORM et orchestration asynchrone</td>
+</tr>
+<tr class="even">
+<td>Pipeline d’ingestion multimodal</td>
+<td>Terminé</td>
+<td>Découpage spécialisé adapté aux textes, images et données tabulaires</td>
+</tr>
+<tr class="odd">
+<td>Recherche hybride</td>
+<td>Terminé</td>
+<td>Fusion vectorielle et lexicale avec pondération dynamique</td>
+</tr>
+<tr class="even">
+<td>Réordonnancement sémantique</td>
+<td>Terminé</td>
+<td>Reranking multi-fournisseurs (local, distant et passerelle)</td>
+</tr>
+<tr class="odd">
+<td>Traitement asynchrone</td>
+<td>Terminé</td>
+<td>Files de travail Celery découplées avec surveillance automatique</td>
+</tr>
+<tr class="even">
+<td>Authentification et sessions</td>
+<td>Terminé</td>
+<td>Gestion des utilisateurs, tokens JWT, clés d’API et contrôle d’accès</td>
+</tr>
+<tr class="odd">
+<td>Filtrage documentaire ACL</td>
+<td>Terminé</td>
+<td>Cloisonnement strict des droits au niveau du moteur d’indexation</td>
+</tr>
+<tr class="even">
+<td>Agentification &amp; Assistants métier</td>
+<td>Terminé</td>
+<td>Création d’agents personnalisés (synthèse, support, analyse), prompts dédiés et périmètre documentaire</td>
+</tr>
+<tr class="odd">
+<td>Outillage &amp; Exécution d’actions</td>
+<td>Terminé</td>
+<td>Attribution sélective d’outils aux agents (recherche interne, web, calcul)</td>
+</tr>
+<tr class="even">
+<td>Déploiement multi-conteneurs</td>
+<td>Terminé</td>
+<td>Orchestration Docker Compose des 11 micro-services</td>
+</tr>
+<tr class="odd">
+<td>Configuration réseau local</td>
+<td>Terminé</td>
+<td>Initialisation automatisée et accès multi-postes sur réseau local</td>
+</tr>
+</tbody>
+</table>
+<h3 id="travaux-prioritaires-avant-mise-en-production">Travaux prioritaires avant mise en production</h3>
+<ol type="1">
+<li><strong>Développement de la suite de tests unitaires et d’intégration :</strong>
+<ul>
+<li>Validation automatisée des règles de permissions et rôles utilisateurs.</li>
+<li>Tests de robustesse sur l’analyseur de données tabulaires et de documents complexes.</li>
+<li>Validation fonctionnelle des filtres d’expression régulière du module de sécurité DLP.</li>
+<li>Mesures de performance sous charge simulant de 10 à 20 requêtes simultanées.</li>
+</ul></li>
+<li><strong>Parachèvement des liaisons applicatives :</strong>
+<ul>
+<li>Finalisation du raccordement des rôles personnalisés sur la totalité des routes de l’API.</li>
+<li>Activation systématique du filtre DLP au sein du flux conversationnel.</li>
+</ul></li>
+<li><strong>Préparation du déploiement en environnement institutionnel :</strong>
+<ul>
+<li>Remplacement systématique des identifiants et clés de chiffrement par défaut par des secrets d’administration générés aléatoirement.</li>
+<li>Activation du protocole HTTPS sécurisé avec renouvellement automatique des certificats.</li>
+<li>Campagne d’essais grandeur nature sur le réseau Wi-Fi de l’établissement SESAME.</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="conclusion-et-perspectives">6. Conclusion et perspectives</h2>
+<p>Le travail accompli au cours de ce stage a permis de concevoir une plateforme RAG moderne, modulaire et robuste. La décision initiale de repartir sur une architecture neuve et unifiée en Python s’est avérée judicieuse : elle a permis de supprimer la complexité d’une pile hétérogène, d’implémenter un découpage documentaire réellement adapté aux différents types de contenus et d’intégrer une recherche hybride associée à un réordonnancement sémantique de premier ordre.</p>
+<p>Le système dispose désormais d’un socle technique solide, capable d’évoluer vers un déploiement institutionnel complet au sein du laboratoire SESAME dès lors que la couverture de tests et les procédures de sécurisation des secrets auront été finalisées.</p>
+<hr />
+<p><em>Rapport de stage — Projet Orbyte — Septembre 2026.</em></p>
+</body>
+</html>

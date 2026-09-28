@@ -148,7 +148,7 @@ dev = [
     "ruff==0.15.21",
     "types-docker==7.1.0.20260518",
     "types-beautifulsoup4==4.12.0.3",
-    "types-html5lib==1.1.11.13",
+    "types-html5lib==1.1.11.20260518",
     "types-oauthlib==3.2.0.9",
     "types-openpyxl==3.0.4.7",
     "types-passlib==1.7.7.20240106",

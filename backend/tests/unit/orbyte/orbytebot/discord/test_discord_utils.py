@@ -31,7 +31,9 @@ class TestGetBotToken:
         with (
             patch("orbyte.orbytebot.discord.utils.DISCORD_BOT_TOKEN", None),
             patch("orbyte.orbytebot.discord.utils.AUTH_TYPE", "basic"),  # Not CLOUD
-            patch("orbyte.orbytebot.discord.utils.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.utils.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.utils.get_discord_bot_config",
                 return_value=mock_config,
@@ -47,7 +49,9 @@ class TestGetBotToken:
         with (
             patch("orbyte.orbytebot.discord.utils.DISCORD_BOT_TOKEN", None),
             patch("orbyte.orbytebot.discord.utils.AUTH_TYPE", "basic"),  # Not CLOUD
-            patch("orbyte.orbytebot.discord.utils.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.utils.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.utils.get_discord_bot_config",
                 return_value=None,

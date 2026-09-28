@@ -28,7 +28,9 @@ from orbyte.tools.tool_implementations.coding_agent.coding_agent_tool import (
     CodingAgentToolOverrideKwargs,
 )
 from orbyte.tools.tool_implementations.memory.memory_tool import MemoryTool
-from orbyte.tools.tool_implementations.memory.memory_tool import MemoryToolOverrideKwargs
+from orbyte.tools.tool_implementations.memory.memory_tool import (
+    MemoryToolOverrideKwargs,
+)
 from orbyte.tools.tool_implementations.open_url.open_url_tool import OpenURLTool
 from orbyte.tools.tool_implementations.search.search_tool import SearchTool
 from orbyte.tools.tool_implementations.web_search.web_search_tool import WebSearchTool
@@ -283,6 +285,7 @@ def run_tool_calls(
         - `updated_citation_mapping`: The updated citation mapping dictionary.
     """
     # Merge tool calls for SearchTool, WebSearchTool, and OpenURLTool
+    _ = chat_files
     merged_tool_calls = _merge_tool_calls(tool_calls)
 
     if not merged_tool_calls:

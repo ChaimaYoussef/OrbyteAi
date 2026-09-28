@@ -15,7 +15,9 @@ from unittest import mock
 import pytest
 
 from ee.orbyte.external_permissions.confluence import space_access
-from ee.orbyte.external_permissions.confluence.constants import ALL_CONF_EMAILS_GROUP_NAME
+from ee.orbyte.external_permissions.confluence.constants import (
+    ALL_CONF_EMAILS_GROUP_NAME,
+)
 from orbyte.connectors.confluence.orbyte_confluence import (
     ConfluenceRestSpacePermissionsNotAvailableError,
 )

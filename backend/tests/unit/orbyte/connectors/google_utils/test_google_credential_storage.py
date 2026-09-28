@@ -27,7 +27,9 @@ from orbyte.connectors.google_utils.shared_constants import (
 from orbyte.connectors.google_utils.shared_constants import (
     DB_CREDENTIALS_DICT_SERVICE_ACCOUNT_KEY,
 )
-from orbyte.connectors.google_utils.shared_constants import DB_CREDENTIALS_DICT_TOKEN_KEY
+from orbyte.connectors.google_utils.shared_constants import (
+    DB_CREDENTIALS_DICT_TOKEN_KEY,
+)
 from orbyte.connectors.google_utils.shared_constants import (
     DB_CREDENTIALS_PRIMARY_ADMIN_KEY,
 )

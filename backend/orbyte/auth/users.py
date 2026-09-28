@@ -1,5 +1,3 @@
-import base64
-import hashlib
 import json
 import os
 import secrets
@@ -10,12 +8,8 @@ from collections.abc import Sequence
 from datetime import datetime
 from datetime import timedelta
 from datetime import timezone
-from functools import partial
 from typing import Any
 from typing import cast
-from typing import Dict
-from typing import List
-from typing import Literal
 from typing import Optional
 from typing import Protocol
 from typing import Tuple
@@ -34,7 +28,6 @@ from fastapi import Request
 from fastapi import Response
 from fastapi import status
 from fastapi import WebSocket
-from fastapi.responses import JSONResponse
 from fastapi.routing import APIRoute
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi_users import BaseUserManager
@@ -53,15 +46,11 @@ from fastapi_users.authentication import (
 from fastapi_users.authentication import Strategy
 from fastapi_users.authentication.strategy.db import AccessTokenDatabase
 from fastapi_users.authentication.strategy.db import DatabaseStrategy
-from fastapi_users.exceptions import UserAlreadyExists
 from fastapi_users.jwt import decode_jwt
 from fastapi_users.jwt import generate_jwt
 from fastapi_users.jwt import SecretType
-from fastapi_users.manager import UserManagerDependency
 from fastapi_users.openapi import OpenAPIResponseType
-from fastapi_users.router.common import ErrorCode
 from fastapi_users_db_sqlalchemy import SQLAlchemyUserDatabase
-from pydantic import BaseModel
 from sqlalchemy import nulls_last
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
@@ -141,7 +130,6 @@ from orbyte.utils.telemetry import mt_cloud_telemetry
 from orbyte.utils.telemetry import optional_telemetry
 from orbyte.utils.telemetry import RecordType
 from orbyte.utils.timing import log_function_time
-from orbyte.utils.url import sanitize_next_url
 from orbyte.utils.variable_functionality import fetch_ee_implementation_or_noop
 from shared_configs.configs import async_return_default_schema
 from shared_configs.configs import MULTI_TENANT
@@ -361,7 +349,9 @@ def verify_email_domain(
     # Check domain whitelist if configured
     if valid_email_domains:
         if domain not in valid_email_domains:
-            raise OrbyteError(OrbyteErrorCode.INVALID_INPUT, "Email domain is not valid")
+            raise OrbyteError(
+                OrbyteErrorCode.INVALID_INPUT, "Email domain is not valid"
+            )
 
 
 def enforce_seat_limit(
@@ -1722,10 +1712,10 @@ class FastAPIUserWithLogoutRouter(FastAPIUsers[models.UP, models.ID]):
         async def refresh(
             user_token: Tuple[models.UP, str] = Depends(get_current_user_token),
             strategy: Strategy[models.UP, models.ID] = Depends(backend.get_strategy),
-            user_manager: BaseUserManager[models.UP, models.ID] = Depends(
+            _user_manager: BaseUserManager[models.UP, models.ID] = Depends(
                 get_user_manager
             ),
-            db_session: AsyncSession = Depends(get_async_session),
+            _db_session: AsyncSession = Depends(get_async_session),
         ) -> Response:
             try:
                 user, token = user_token
@@ -1928,7 +1918,7 @@ async def optional_user(
     request: Request,
     async_db_session: AsyncSession = Depends(get_async_session),
     user: User | None = Depends(optional_fastapi_current_user),
-    user_manager: BaseUserManager[User, uuid.UUID] = Depends(get_user_manager),
+    _user_manager: BaseUserManager[User, uuid.UUID] = Depends(get_user_manager),
 ) -> User | None:
     if user := await _check_for_saml_and_jwt(request, user, async_db_session):
         # If user is already set, _check_for_saml_and_jwt returns the same user object

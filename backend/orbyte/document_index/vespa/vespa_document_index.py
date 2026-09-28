@@ -77,7 +77,9 @@ from orbyte.document_index.vespa_constants import YQL_BASE
 from orbyte.indexing.models import DocMetadataAwareIndexChunk
 from orbyte.key_value_store.factory import get_shared_kv_store
 from orbyte.kg.utils.formatting_utils import split_relationship_id
-from orbyte.tools.tool_implementations.search.constants import KEYWORD_QUERY_HYBRID_ALPHA
+from orbyte.tools.tool_implementations.search.constants import (
+    KEYWORD_QUERY_HYBRID_ALPHA,
+)
 from orbyte.utils.batching import batch_generator
 from orbyte.utils.logger import setup_logger
 from orbyte.utils.retry_wrapper import retry_builder
@@ -276,7 +278,9 @@ def deploy_vespa_schemas(
     headers = {"Content-Type": "application/zip"}
     response = requests.post(deploy_url, headers=headers, data=zip_file)
     if response.status_code != 200:
-        logger.error("Failed to prepare Vespa Orbyte Index. Response: %s", response.text)
+        logger.error(
+            "Failed to prepare Vespa Orbyte Index. Response: %s", response.text
+        )
         raise RuntimeError(
             f"Failed to prepare Vespa Orbyte Index. Response: {response.text}"
         )

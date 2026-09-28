@@ -341,7 +341,9 @@ class KubernetesSandboxManager(SandboxManager):
         self._init_serve_state()
 
         # Load AGENTS.md template path
-        build_dir = Path(__file__).parent.parent.parent  # /orbyte/server/features/build/
+        build_dir = Path(
+            __file__
+        ).parent.parent.parent  # /orbyte/server/features/build/
         self._agent_instructions_template_path = build_dir / "AGENTS.template.md"
 
         logger.info(
@@ -1059,7 +1061,9 @@ class KubernetesSandboxManager(SandboxManager):
         )
 
         if not orbyte_pat:
-            raise ValueError("orbyte_pat is required for Kubernetes sandbox provisioning")
+            raise ValueError(
+                "orbyte_pat is required for Kubernetes sandbox provisioning"
+            )
         if not SANDBOX_API_SERVER_URL:
             raise ValueError(
                 "SANDBOX_API_SERVER_URL must be set for Kubernetes sandbox provisioning"

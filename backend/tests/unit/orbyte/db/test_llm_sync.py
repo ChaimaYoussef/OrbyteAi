@@ -31,7 +31,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(
@@ -74,7 +75,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(
@@ -113,7 +115,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(
@@ -137,7 +140,9 @@ class TestSyncModelConfigurations:
         """Test that ValueError is raised when provider not found."""
         mock_session = MagicMock()
 
-        with patch("orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=None):
+        with patch(
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=None
+        ):
             with pytest.raises(ValueError, match="not found"):
                 sync_model_configurations(
                     db_session=mock_session,
@@ -154,7 +159,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(
@@ -186,7 +192,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             # Model with only required fields (max_input_tokens and supports_image_input default)
             models = [
@@ -223,7 +230,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(
@@ -257,7 +265,8 @@ class TestSyncModelConfigurations:
         mock_session = MagicMock()
 
         with patch(
-            "orbyte.db.llm.fetch_existing_llm_provider_by_id", return_value=mock_provider
+            "orbyte.db.llm.fetch_existing_llm_provider_by_id",
+            return_value=mock_provider,
         ):
             models = [
                 SyncModelEntry(

@@ -12,8 +12,12 @@ from orbyte.db.models import User
 from orbyte.db.persona import get_default_assistant
 from orbyte.db.persona import update_default_assistant_configuration
 from orbyte.prompts.chat_prompts import DEFAULT_SYSTEM_PROMPT
-from orbyte.server.features.default_assistant.models import DefaultAssistantConfiguration
-from orbyte.server.features.default_assistant.models import DefaultAssistantUpdateRequest
+from orbyte.server.features.default_assistant.models import (
+    DefaultAssistantConfiguration,
+)
+from orbyte.server.features.default_assistant.models import (
+    DefaultAssistantUpdateRequest,
+)
 from orbyte.utils.logger import setup_logger
 
 logger = setup_logger()

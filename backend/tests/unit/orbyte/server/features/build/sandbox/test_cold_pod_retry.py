@@ -20,7 +20,9 @@ from typing import Any
 import httpx
 
 from orbyte.server.features.build.sandbox.opencode.serve_client import ClientTimeouts
-from orbyte.server.features.build.sandbox.opencode.serve_client import OpencodeServeClient
+from orbyte.server.features.build.sandbox.opencode.serve_client import (
+    OpencodeServeClient,
+)
 
 _STALE_ID = "ses_stale_001"
 _FRESH_ID = "ses_fresh_002"

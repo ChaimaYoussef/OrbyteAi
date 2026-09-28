@@ -100,7 +100,9 @@ def delete_token(
     """Delete (revoke) personal access token. Only owner can revoke their own tokens."""
     success = revoke_pat(db_session, token_id, user.id, pat_type=PatType.USER)
     if not success:
-        raise OrbyteError(OrbyteErrorCode.NOT_FOUND, "Token not found or not owned by user")
+        raise OrbyteError(
+            OrbyteErrorCode.NOT_FOUND, "Token not found or not owned by user"
+        )
     db_session.commit()
 
     logger.info("User %s revoked token %s", user.email, token_id)

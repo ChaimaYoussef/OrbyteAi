@@ -12,7 +12,9 @@ from sqlalchemy.orm import Session
 
 from orbyte.auth.permissions import require_permission
 from orbyte.auth.users import current_curator_or_admin_user
-from orbyte.background.celery.tasks.pruning.tasks import try_creating_prune_generator_task
+from orbyte.background.celery.tasks.pruning.tasks import (
+    try_creating_prune_generator_task,
+)
 from orbyte.background.celery.versioned_apps.client import app as client_app
 from orbyte.background.indexing.models import IndexAttemptErrorPydantic
 from orbyte.configs.constants import DocumentSource

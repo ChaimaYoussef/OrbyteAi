@@ -17,7 +17,9 @@ from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
 from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
     DEFAULT_READ_TIMEOUT_SECONDS,
 )
-from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import OrbyteWebCrawler
+from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
+    OrbyteWebCrawler,
+)
 
 
 class FakeResponse(BaseModel):
@@ -255,7 +257,9 @@ def _respond_by_url(
 class TestParallelExecution:
     """Verify that contents() fetches URLs in parallel."""
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_multiple_urls_fetched_concurrently(self, mock_get: MagicMock) -> None:
         """With a per-URL delay, parallel execution should be much faster than sequential."""
         per_url_delay = 0.3
@@ -274,14 +278,18 @@ class TestParallelExecution:
         assert len(results) == num_urls
         assert all(r.scrape_successful for r in results)
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_empty_urls_returns_empty(self, mock_get: MagicMock) -> None:
         crawler = OrbyteWebCrawler()
         results = crawler.contents([])
         assert results == []
         mock_get.assert_not_called()
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_single_url(self, mock_get: MagicMock) -> None:
         mock_get.return_value = _make_mock_response()
         crawler = OrbyteWebCrawler()
@@ -293,7 +301,9 @@ class TestParallelExecution:
 class TestFailureIsolation:
     """Verify that one URL failure doesn't affect others in the batch."""
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_one_failure_doesnt_kill_batch(self, mock_get: MagicMock) -> None:
         good_resp = _make_mock_response()
         bad_resp = _make_mock_response(status_code=500)
@@ -316,7 +326,9 @@ class TestFailureIsolation:
         assert not results[1].scrape_successful
         assert results[2].scrape_successful
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_exception_doesnt_kill_batch(self, mock_get: MagicMock) -> None:
         good_resp = _make_mock_response()
 
@@ -337,7 +349,9 @@ class TestFailureIsolation:
         assert not results[1].scrape_successful
         assert results[2].scrape_successful
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_ssrf_exception_doesnt_kill_batch(self, mock_get: MagicMock) -> None:
         from orbyte.utils.url import SSRFException
 
@@ -364,7 +378,9 @@ class TestFailureIsolation:
 class TestTupleTimeout:
     """Verify that separate connect and read timeouts are passed correctly."""
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_default_tuple_timeout(self, mock_get: MagicMock) -> None:
         mock_get.return_value = _make_mock_response()
 
@@ -377,7 +393,9 @@ class TestTupleTimeout:
             DEFAULT_READ_TIMEOUT_SECONDS,
         )
 
-    @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
+    @patch(
+        "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get"
+    )
     def test_custom_tuple_timeout(self, mock_get: MagicMock) -> None:
         mock_get.return_value = _make_mock_response()
 

@@ -385,7 +385,9 @@ def _format_messages_as_context(
             continue
 
         sender = (
-            "OrbyteBot" if msg.author.id == bot_user.id else f"@{msg.author.display_name}"
+            "OrbyteBot"
+            if msg.author.id == bot_user.id
+            else f"@{msg.author.display_name}"
         )
         formatted.append(f"{sender}: {format_message_content(msg)}")
 

@@ -50,7 +50,9 @@ from orbyte.connectors.factory import validate_ccpair_for_user
 from orbyte.db.connector import mark_cc_pair_as_permissions_synced
 from orbyte.db.connector_credential_pair import get_connector_credential_pair_from_id
 from orbyte.db.document import get_document_ids_for_connector_credential_pair
-from orbyte.db.document import get_documents_for_connector_credential_pair_limited_columns
+from orbyte.db.document import (
+    get_documents_for_connector_credential_pair_limited_columns,
+)
 from orbyte.db.document import upsert_document_by_connector_credential_pair
 from orbyte.db.engine.sql_engine import get_session_with_current_tenant
 from orbyte.db.engine.sql_engine import get_session_with_tenant
@@ -65,7 +67,9 @@ from orbyte.db.models import ConnectorCredentialPair
 from orbyte.db.permission_sync_attempt import complete_doc_permission_sync_attempt
 from orbyte.db.permission_sync_attempt import create_doc_permission_sync_attempt
 from orbyte.db.permission_sync_attempt import mark_doc_permission_sync_attempt_failed
-from orbyte.db.permission_sync_attempt import mark_doc_permission_sync_attempt_in_progress
+from orbyte.db.permission_sync_attempt import (
+    mark_doc_permission_sync_attempt_in_progress,
+)
 from orbyte.db.sync_record import insert_sync_record
 from orbyte.db.sync_record import update_sync_record_status
 from orbyte.db.users import batch_add_ext_perm_user_if_not_exists
@@ -75,7 +79,9 @@ from orbyte.db.utils import SortOrder
 from orbyte.indexing.indexing_heartbeat import IndexingHeartbeatInterface
 from orbyte.redis.redis_connector import RedisConnector
 from orbyte.redis.redis_connector_doc_perm_sync import RedisConnectorPermissionSync
-from orbyte.redis.redis_connector_doc_perm_sync import RedisConnectorPermissionSyncPayload
+from orbyte.redis.redis_connector_doc_perm_sync import (
+    RedisConnectorPermissionSyncPayload,
+)
 from orbyte.redis.redis_pool import get_redis_client
 from orbyte.redis.redis_pool import get_redis_replica_client
 from orbyte.redis.redis_pool import redis_lock_dump

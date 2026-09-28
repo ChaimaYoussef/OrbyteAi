@@ -5,7 +5,9 @@ from collections.abc import Callable
 from typing import Any
 from typing import TypeVar
 
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
     RateLimitTriedTooManyTimesError,
 )

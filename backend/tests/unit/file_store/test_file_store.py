@@ -221,7 +221,9 @@ class TestExternalStorageFileStore:
             ),
             patch("orbyte.file_store.file_store.S3_FILE_STORE_PREFIX", "orbyte-files"),
             patch("orbyte.file_store.file_store.S3_AWS_ACCESS_KEY_ID", "test-key"),
-            patch("orbyte.file_store.file_store.S3_AWS_SECRET_ACCESS_KEY", "test-secret"),
+            patch(
+                "orbyte.file_store.file_store.S3_AWS_SECRET_ACCESS_KEY", "test-secret"
+            ),
         ):
             # Mock the database operation to avoid SQLAlchemy issues
             with patch("orbyte.db.file_record.upsert_filerecord") as mock_upsert:
@@ -528,7 +530,9 @@ class TestGCSFileStore:
                 file_id="test-file.txt", db_session=mock_db_session
             )
             mock_client.bucket.assert_called_once_with("test-bucket")
-            mock_bucket.blob.assert_called_once_with("orbyte-files/public/test-file.txt")
+            mock_bucket.blob.assert_called_once_with(
+                "orbyte-files/public/test-file.txt"
+            )
             mock_blob.download_as_bytes.assert_called_once()
             assert result.read() == sample_content
 
@@ -742,7 +746,8 @@ class TestGCSFileStore:
             assert mock_upsert.call_args.kwargs["file_id"] == "new-id"
             assert mock_upsert.call_args.kwargs["bucket_name"] == "test-bucket"
             assert (
-                mock_upsert.call_args.kwargs["object_key"] == "orbyte-files/public/old-id"
+                mock_upsert.call_args.kwargs["object_key"]
+                == "orbyte-files/public/old-id"
             )
             mock_delete_record.assert_called_once_with(
                 file_id="old-id", db_session=mock_db_session

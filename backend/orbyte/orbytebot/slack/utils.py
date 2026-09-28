@@ -24,7 +24,9 @@ from orbyte.configs.orbytebot_configs import ORBYTE_BOT_MAX_QPM
 from orbyte.configs.orbytebot_configs import ORBYTE_BOT_MAX_WAIT_TIME
 from orbyte.configs.orbytebot_configs import ORBYTE_BOT_NUM_RETRIES
 from orbyte.configs.orbytebot_configs import ORBYTE_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD
-from orbyte.configs.orbytebot_configs import ORBYTE_BOT_RESPONSE_LIMIT_TIME_PERIOD_SECONDS
+from orbyte.configs.orbytebot_configs import (
+    ORBYTE_BOT_RESPONSE_LIMIT_TIME_PERIOD_SECONDS,
+)
 from orbyte.connectors.slack.utils import SlackTextCleaner
 from orbyte.db.engine.sql_engine import get_session_with_current_tenant
 from orbyte.db.users import get_user_by_email

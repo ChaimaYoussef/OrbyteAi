@@ -33,7 +33,8 @@ def mock_filestore_record() -> MagicMock:
 
 @patch("orbyte.connectors.file.connector.get_default_file_store")
 @patch(
-    "orbyte.file_processing.extract_file_text.get_unstructured_api_key", return_value=None
+    "orbyte.file_processing.extract_file_text.get_unstructured_api_key",
+    return_value=None,
 )
 def test_single_text_file_with_metadata(
     mock_get_unstructured_api_key: MagicMock,  # noqa: ARG001
@@ -84,7 +85,8 @@ def test_single_text_file_with_metadata(
 
 
 @patch(
-    "orbyte.file_processing.extract_file_text.get_unstructured_api_key", return_value=None
+    "orbyte.file_processing.extract_file_text.get_unstructured_api_key",
+    return_value=None,
 )
 def test_two_text_files_with_zip_metadata(
     mock_get_unstructured_api_key: MagicMock,  # noqa: ARG001
@@ -165,7 +167,8 @@ def test_two_text_files_with_zip_metadata(
 
 @patch("orbyte.connectors.file.connector.get_default_file_store")
 @patch(
-    "orbyte.file_processing.extract_file_text.get_unstructured_api_key", return_value=None
+    "orbyte.file_processing.extract_file_text.get_unstructured_api_key",
+    return_value=None,
 )
 def test_tabular_file_sets_file_id_on_document(
     mock_get_unstructured_api_key: MagicMock,  # noqa: ARG001
@@ -205,7 +208,8 @@ def test_tabular_file_sets_file_id_on_document(
 
 @patch("orbyte.connectors.file.connector.get_default_file_store")
 @patch(
-    "orbyte.file_processing.extract_file_text.get_unstructured_api_key", return_value=None
+    "orbyte.file_processing.extract_file_text.get_unstructured_api_key",
+    return_value=None,
 )
 def test_non_tabular_file_leaves_file_id_none(
     mock_get_unstructured_api_key: MagicMock,  # noqa: ARG001
@@ -244,7 +248,8 @@ def test_non_tabular_file_leaves_file_id_none(
 
 @patch("orbyte.connectors.file.connector.get_default_file_store")
 @patch(
-    "orbyte.file_processing.extract_file_text.get_unstructured_api_key", return_value=None
+    "orbyte.file_processing.extract_file_text.get_unstructured_api_key",
+    return_value=None,
 )
 def test_mixed_batch_only_tabular_gets_file_id(
     mock_get_unstructured_api_key: MagicMock,  # noqa: ARG001

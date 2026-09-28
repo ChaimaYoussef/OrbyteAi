@@ -431,8 +431,8 @@ fastapi==0.133.1 \
     --hash=sha256:658f34ba334605b1617a65adf2ea6461901bdb9af3a3080d63ff791ecf7dc2e2 \
     --hash=sha256:ed152a45912f102592976fde6cbce7dae1a8a1053da94202e51dd35d184fadd6
     # via
+    #   onyx-devtools
     #   orbyte
-    #   orbyte-devtools
 fastavro==1.12.1 \
     --hash=sha256:0714b285160fcd515eb0455540f40dd6dac93bdeacdb03f24e8eac3d8aa51f8d \
     --hash=sha256:120aaf82ac19d60a1016afe410935fe94728752d9c2d684e267e5b7f0e70f6d9 \
@@ -1179,7 +1179,7 @@ numpy==2.4.1 \
     #   matplotlib
     #   pandas-stubs
     #   voyageai
-orbyte-devtools==0.10.0 \
+onyx-devtools==0.10.0 \
     --hash=sha256:5c49cdb7e31fd8c96b11393384566986c1893b16353ba09fe87ec1329356422a \
     --hash=sha256:7bcd4da985fbd0acd4548a5560b383343e012307142a51d8853df3978fd67209 \
     --hash=sha256:7e05062fff6bfe73fb9cea73d007e370bf301e76f66d530463d025138a698731 \
@@ -1195,7 +1195,7 @@ openai==2.38.0 \
 openapi-generator-cli==7.17.0 \
     --hash=sha256:00678095abe01d61ddab24d83d5cb34c72ee3ec1e45045200f800c11c183ecba \
     --hash=sha256:0a6f11e43598ed34c6a20c85dc9f1d4a81fe503a8ebcb58f8661b6f973c24d7b
-    # via orbyte-devtools
+    # via onyx-devtools
 packaging==25.0 \
     --hash=sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484 \
     --hash=sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f
@@ -1457,8 +1457,8 @@ pydantic==2.11.7 \
     #   google-cloud-aiplatform
     #   google-genai
     #   litellm
-    #   orbyte
     #   openai
+    #   orbyte
 pydantic-core==2.33.2 \
     --hash=sha256:04a1a413977ab517154eebb2d326da71638271477d6ad87a769102f7c2488c56 \
     --hash=sha256:0a9f2c9dd19656823cb8250b0724ee9c60a82f3cdf68a080979d13092a3b0fef \

@@ -35,7 +35,9 @@ from orbyte.error_handling.exceptions import OrbyteError
 from orbyte.redis.redis_pool import get_redis_client
 from orbyte.server.features.build.db.build_session import allocate_nextjs_port
 from orbyte.server.features.build.db.build_session import get_build_session
-from orbyte.server.features.build.db.build_session import set_build_session_sharing_scope
+from orbyte.server.features.build.db.build_session import (
+    set_build_session_sharing_scope,
+)
 from orbyte.server.features.build.db.sandbox import get_latest_snapshot_for_session
 from orbyte.server.features.build.db.sandbox import get_sandbox_by_user_id
 from orbyte.server.features.build.db.sandbox import update_sandbox_heartbeat
@@ -62,7 +64,9 @@ from orbyte.server.features.build.session.models import WebappInfo
 from orbyte.server.features.build.session.sandbox_lifecycle import (
     create_session_snapshot_keep_latest,
 )
-from orbyte.server.features.build.session.sandbox_lifecycle import hydrate_managed_content
+from orbyte.server.features.build.session.sandbox_lifecycle import (
+    hydrate_managed_content,
+)
 from orbyte.server.features.build.session.sandbox_lifecycle import (
     mark_sandbox_provisioning,
 )
@@ -1018,7 +1022,9 @@ def get_session_scheduled_run_context(
         user_id=user.id,
     )
     if context is None:
-        raise OrbyteError(OrbyteErrorCode.NOT_FOUND, "Session has no scheduled-run context")
+        raise OrbyteError(
+            OrbyteErrorCode.NOT_FOUND, "Session has no scheduled-run context"
+        )
     return ScheduledRunContextResponse(
         run_id=str(context["run_id"]),
         task_id=str(context["task_id"]),
@@ -1069,7 +1075,9 @@ def get_session_scheduled_run_events(
         user_id=user.id,
     )
     if context is None:
-        raise OrbyteError(OrbyteErrorCode.NOT_FOUND, "Session has no scheduled-run context")
+        raise OrbyteError(
+            OrbyteErrorCode.NOT_FOUND, "Session has no scheduled-run context"
+        )
     if context["status"] != ScheduledTaskRunStatus.RUNNING:
         raise OrbyteError(OrbyteErrorCode.CONFLICT, "Scheduled run is not running")
 

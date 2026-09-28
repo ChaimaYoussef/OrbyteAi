@@ -37,7 +37,9 @@ from orbyte.server.features.build.sandbox.event_schema import TURN_ERROR_CODE_TR
 from orbyte.server.features.build.sandbox.opencode import serve_client
 from orbyte.server.features.build.sandbox.opencode.event_bus import PodEventBus
 from orbyte.server.features.build.sandbox.opencode.serve_client import ClientTimeouts
-from orbyte.server.features.build.sandbox.opencode.serve_client import OpencodeServeClient
+from orbyte.server.features.build.sandbox.opencode.serve_client import (
+    OpencodeServeClient,
+)
 from orbyte.server.features.build.sandbox.sse import SSEKeepalive
 
 _SESSION = "ses_test_123"

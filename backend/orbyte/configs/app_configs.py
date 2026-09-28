@@ -103,7 +103,9 @@ SHOW_EXTRA_CONNECTORS = os.environ.get("SHOW_EXTRA_CONNECTORS", "").lower() == "
 # 2. anonymized user emails
 # 3. no queries
 ORBYTE_QUERY_HISTORY_TYPE = QueryHistoryType(
-    (os.environ.get("ORBYTE_QUERY_HISTORY_TYPE") or QueryHistoryType.NORMAL.value).lower()
+    (
+        os.environ.get("ORBYTE_QUERY_HISTORY_TYPE") or QueryHistoryType.NORMAL.value
+    ).lower()
 )
 
 # Visibility-only: hides the Query History page from the admin sidebar; the

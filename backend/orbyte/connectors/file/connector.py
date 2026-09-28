@@ -13,7 +13,9 @@ from orbyte.configs.constants import FileOrigin
 from orbyte.connectors.cross_connector_utils.miscellaneous_utils import (
     process_orbyte_metadata,
 )
-from orbyte.connectors.cross_connector_utils.tabular_section_utils import is_tabular_file
+from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
+    is_tabular_file,
+)
 from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
     tabular_file_to_sections,
 )

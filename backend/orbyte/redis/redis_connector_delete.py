@@ -15,7 +15,9 @@ from orbyte.configs.constants import OrbyteCeleryQueues
 from orbyte.configs.constants import OrbyteCeleryTask
 from orbyte.configs.constants import OrbyteRedisConstants
 from orbyte.db.connector_credential_pair import get_connector_credential_pair_from_id
-from orbyte.db.document import construct_document_id_select_for_connector_credential_pair
+from orbyte.db.document import (
+    construct_document_id_select_for_connector_credential_pair,
+)
 from orbyte.redis.tenant_redis_client import TenantRedisClient
 
 

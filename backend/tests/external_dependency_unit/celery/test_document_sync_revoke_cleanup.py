@@ -15,7 +15,9 @@ import pytest
 from orbyte.background.celery.apps.app_base import on_task_revoked
 from orbyte.background.celery.tasks.vespa.document_sync import DOCUMENT_SYNC_PREFIX
 from orbyte.background.celery.tasks.vespa.document_sync import DOCUMENT_SYNC_TASKSET_KEY
-from orbyte.background.celery.tasks.vespa.document_sync import get_document_sync_remaining
+from orbyte.background.celery.tasks.vespa.document_sync import (
+    get_document_sync_remaining,
+)
 from orbyte.background.celery.tasks.vespa.document_sync import is_document_sync_fenced
 from orbyte.background.celery.tasks.vespa.document_sync import reset_document_sync
 from orbyte.background.celery.tasks.vespa.document_sync import set_document_sync_fence

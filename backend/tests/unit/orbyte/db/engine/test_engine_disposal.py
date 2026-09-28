@@ -123,7 +123,9 @@ async def test_lifespan_shutdown_disposes_all_three_engines() -> None:
             patch.object(orbyte_main, "setup_postgres_connection_pool_metrics")
         )
         stack.enter_context(patch.object(orbyte_main, "validate_no_vector_db_settings"))
-        stack.enter_context(patch.object(orbyte_main, "validate_cache_backend_settings"))
+        stack.enter_context(
+            patch.object(orbyte_main, "validate_cache_backend_settings")
+        )
         stack.enter_context(patch.object(orbyte_main, "validate_registry"))
         stack.enter_context(patch.object(orbyte_main, "verify_user_auth_secret"))
         stack.enter_context(
@@ -137,7 +139,9 @@ async def test_lifespan_shutdown_disposes_all_three_engines() -> None:
         stack.enter_context(
             patch.object(orbyte_main, "warm_up_connections", new=AsyncMock())
         )
-        stack.enter_context(patch.object(orbyte_main, "get_session_with_current_tenant"))
+        stack.enter_context(
+            patch.object(orbyte_main, "get_session_with_current_tenant")
+        )
         stack.enter_context(patch.object(orbyte_main, "setup_orbyte"))
         stack.enter_context(patch.object(orbyte_main, "get_default_file_store"))
         stack.enter_context(patch.object(orbyte_main, "get_or_generate_uuid"))

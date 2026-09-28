@@ -45,7 +45,9 @@ from orbyte.prompts.deep_research.orchestration_layer import (
     INTERNAL_SEARCH_RESEARCH_TASK_GUIDANCE,
 )
 from orbyte.prompts.deep_research.orchestration_layer import ORCHESTRATOR_PROMPT
-from orbyte.prompts.deep_research.orchestration_layer import ORCHESTRATOR_PROMPT_REASONING
+from orbyte.prompts.deep_research.orchestration_layer import (
+    ORCHESTRATOR_PROMPT_REASONING,
+)
 from orbyte.prompts.deep_research.orchestration_layer import RESEARCH_PLAN_PROMPT
 from orbyte.prompts.deep_research.orchestration_layer import RESEARCH_PLAN_REMINDER
 from orbyte.prompts.deep_research.orchestration_layer import USER_FINAL_REPORT_QUERY

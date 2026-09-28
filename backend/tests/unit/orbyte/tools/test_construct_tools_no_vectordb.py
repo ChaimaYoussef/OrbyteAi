@@ -10,7 +10,9 @@ Verifies that:
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
-from orbyte.tools.tool_implementations.file_reader.file_reader_tool import FileReaderTool
+from orbyte.tools.tool_implementations.file_reader.file_reader_tool import (
+    FileReaderTool,
+)
 
 APP_CONFIGS_MODULE = "orbyte.configs.app_configs"
 FILE_READER_MODULE = "orbyte.tools.tool_implementations.file_reader.file_reader_tool"

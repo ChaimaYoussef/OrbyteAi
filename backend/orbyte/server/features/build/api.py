@@ -13,7 +13,9 @@ from orbyte.server.features.build.debug import router as debug_router
 from orbyte.server.features.build.external_apps.api import (
     admin_router as external_apps_admin_router,
 )
-from orbyte.server.features.build.external_apps.api import router as external_apps_router
+from orbyte.server.features.build.external_apps.api import (
+    router as external_apps_router,
+)
 from orbyte.server.features.build.external_apps.oauth import (
     router as external_apps_oauth_router,
 )
@@ -47,7 +49,9 @@ def require_orbyte_craft_enabled(
     return user
 
 
-router = APIRouter(prefix="/build", dependencies=[Depends(require_orbyte_craft_enabled)])
+router = APIRouter(
+    prefix="/build", dependencies=[Depends(require_orbyte_craft_enabled)]
+)
 
 # Admin-only Craft endpoints. Deliberately NOT behind the craft-enabled-for-user
 # gate: an admin configuring Craft may not have Craft enabled for themselves.

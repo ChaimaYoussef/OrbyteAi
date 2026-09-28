@@ -8,7 +8,9 @@ import requests
 from fastapi import HTTPException
 
 import orbyte.tools.tool_implementations.web_search.clients.brave_client as brave_module
-from orbyte.tools.tool_implementations.web_search.clients.brave_client import BraveClient
+from orbyte.tools.tool_implementations.web_search.clients.brave_client import (
+    BraveClient,
+)
 
 
 class DummyResponse:

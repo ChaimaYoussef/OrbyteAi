@@ -28,7 +28,9 @@ from orbyte.server.features.build.db.build_session import get_build_session
 from orbyte.server.features.build.interactive_turns.executor import (
     start_interactive_turn_runner,
 )
-from orbyte.server.features.build.interactive_turns.models import InteractiveTurnResponse
+from orbyte.server.features.build.interactive_turns.models import (
+    InteractiveTurnResponse,
+)
 from orbyte.server.features.build.interactive_turns.state import get_active_turn
 from orbyte.server.features.build.interactive_turns.state import get_turn
 from orbyte.server.features.build.interactive_turns.state import TURN_STATUS_FAILED
@@ -149,7 +151,9 @@ def get_interactive_turn_events(
             or requested_turn.user_id != user.id
             or requested_turn.status != TURN_STATUS_FAILED
         ):
-            raise OrbyteError(OrbyteErrorCode.CONFLICT, "Interactive turn is not running")
+            raise OrbyteError(
+                OrbyteErrorCode.CONFLICT, "Interactive turn is not running"
+            )
         initial_error_detail = requested_turn.error_detail or "Interactive turn failed."
 
     user_id = user.id

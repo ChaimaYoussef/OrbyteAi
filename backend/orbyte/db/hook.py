@@ -143,7 +143,9 @@ def update_hook__no_commit(
         db_session=db_session, hook_id=hook_id, include_creator=include_creator
     )
     if hook is None:
-        raise OrbyteError(OrbyteErrorCode.NOT_FOUND, f"Hook with id {hook_id} not found.")
+        raise OrbyteError(
+            OrbyteErrorCode.NOT_FOUND, f"Hook with id {hook_id} not found."
+        )
 
     if name is not None:
         hook.name = name
@@ -171,7 +173,9 @@ def delete_hook__no_commit(
 ) -> None:
     hook = get_hook_by_id(db_session=db_session, hook_id=hook_id)
     if hook is None:
-        raise OrbyteError(OrbyteErrorCode.NOT_FOUND, f"Hook with id {hook_id} not found.")
+        raise OrbyteError(
+            OrbyteErrorCode.NOT_FOUND, f"Hook with id {hook_id} not found."
+        )
 
     hook.deleted = True
     hook.is_active = False

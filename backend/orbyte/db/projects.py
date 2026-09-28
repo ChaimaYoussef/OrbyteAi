@@ -24,7 +24,9 @@ from orbyte.db.models import User
 from orbyte.db.models import UserFile
 from orbyte.db.models import UserProject
 from orbyte.server.documents.connector import upload_files
-from orbyte.server.features.projects.projects_file_utils import categorize_uploaded_files
+from orbyte.server.features.projects.projects_file_utils import (
+    categorize_uploaded_files,
+)
 from orbyte.server.features.projects.projects_file_utils import RejectedFile
 from orbyte.utils.logger import setup_logger
 from shared_configs.contextvars import get_current_tenant_id

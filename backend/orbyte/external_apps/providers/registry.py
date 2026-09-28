@@ -52,7 +52,9 @@ def get_provider_for_app(app: ExternalApp) -> ExternalAppProvider | None:
     return PROVIDERS.get(app.app_type)
 
 
-def get_orbyte_managed_provider(app_type: ExternalAppType) -> OrbyteManagedExtApp | None:
+def get_orbyte_managed_provider(
+    app_type: ExternalAppType,
+) -> OrbyteManagedExtApp | None:
     """The Orbyte-managed provider for ``app_type``, or None when the app_type is
     CUSTOM/unregistered or its provider isn't Orbyte-managed. Not gated on
     ``MULTI_TENANT`` — callers add that for the cloud-only lockdown (``is not

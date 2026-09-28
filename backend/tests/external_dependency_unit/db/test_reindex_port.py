@@ -40,7 +40,9 @@ from orbyte.configs.constants import OrbyteCeleryQueues
 from orbyte.configs.constants import OrbyteCeleryTask
 from orbyte.context.search.models import SavedSearchSettings
 from orbyte.db import port_attempt as port_attempt_db
-from orbyte.db.connector_credential_pair import get_last_successful_attempt_poll_range_end
+from orbyte.db.connector_credential_pair import (
+    get_last_successful_attempt_poll_range_end,
+)
 from orbyte.db.document import document_has_indexable_cc_pair
 from orbyte.db.document import filter_existing_cc_pair_document_ids
 from orbyte.db.document import get_document_ids_for_cc_pair_batch

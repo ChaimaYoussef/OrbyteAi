@@ -101,7 +101,9 @@ def test_parse_spreadsheet_for_preview_truncates_large_sheets() -> None:
 
     # A first row larger than the cap yields empty CSV (never a mid-row slice)
     buf.seek(0)
-    with patch("orbyte.server.query_and_chat.chat_utils.MAX_PREVIEW_CHARS_PER_SHEET", 5):
+    with patch(
+        "orbyte.server.query_and_chat.chat_utils.MAX_PREVIEW_CHARS_PER_SHEET", 5
+    ):
         preview = parse_spreadsheet_for_preview(buf, "big.xlsx")
     assert preview.sheets[0].truncated
     assert preview.sheets[0].csv == ""
@@ -120,7 +122,9 @@ def test_truncation_skips_newlines_inside_quoted_cells() -> None:
     workbook.save(buf)
     buf.seek(0)
 
-    with patch("orbyte.server.query_and_chat.chat_utils.MAX_PREVIEW_CHARS_PER_SHEET", 50):
+    with patch(
+        "orbyte.server.query_and_chat.chat_utils.MAX_PREVIEW_CHARS_PER_SHEET", 50
+    ):
         preview = parse_spreadsheet_for_preview(buf, "quoted.xlsx")
 
     quoted_sheet = preview.sheets[0]

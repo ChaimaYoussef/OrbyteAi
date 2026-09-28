@@ -5,10 +5,9 @@ Analyzes user queries and chat messages for sensitive data keywords or patterns
 and flags them for security auditing.
 """
 
-from datetime import datetime, timezone
 import re
-from typing import List, NamedTuple
-from pydantic import BaseModel
+from typing import List
+from typing import NamedTuple
 
 
 class DLPRuleSeverity(str):
@@ -66,9 +65,15 @@ def audit_query_for_sensitivity(
             matched_patterns.append(name)
             if severity == DLPRuleSeverity.CRITICAL:
                 max_severity = DLPRuleSeverity.CRITICAL
-            elif severity == DLPRuleSeverity.HIGH and max_severity != DLPRuleSeverity.CRITICAL:
+            elif (
+                severity == DLPRuleSeverity.HIGH
+                and max_severity != DLPRuleSeverity.CRITICAL
+            ):
                 max_severity = DLPRuleSeverity.HIGH
-            elif severity == DLPRuleSeverity.MEDIUM and max_severity == DLPRuleSeverity.LOW:
+            elif (
+                severity == DLPRuleSeverity.MEDIUM
+                and max_severity == DLPRuleSeverity.LOW
+            ):
                 max_severity = DLPRuleSeverity.MEDIUM
 
     # Check custom keywords

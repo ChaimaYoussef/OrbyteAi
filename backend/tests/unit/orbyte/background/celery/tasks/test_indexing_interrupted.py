@@ -6,7 +6,9 @@ trips the repeated-error auto-pause, while genuine consecutive FAILED still does
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
-from orbyte.background.celery.tasks.docprocessing.utils import is_in_repeated_error_state
+from orbyte.background.celery.tasks.docprocessing.utils import (
+    is_in_repeated_error_state,
+)
 from orbyte.background.celery.tasks.docprocessing.utils import (
     NUM_REPEAT_ERRORS_BEFORE_REPEATED_ERROR_STATE,
 )

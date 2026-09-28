@@ -12,7 +12,9 @@ from ee.orbyte.server.enterprise_settings.models import AnalyticsScriptUpload
 from ee.orbyte.server.enterprise_settings.models import EnterpriseSettings
 from ee.orbyte.server.enterprise_settings.models import NavigationItem
 from ee.orbyte.server.enterprise_settings.store import store_analytics_script
-from ee.orbyte.server.enterprise_settings.store import store_settings as store_ee_settings
+from ee.orbyte.server.enterprise_settings.store import (
+    store_settings as store_ee_settings,
+)
 from ee.orbyte.server.enterprise_settings.store import upload_logo
 from orbyte.db.engine.sql_engine import get_session_with_current_tenant
 from orbyte.db.llm import fetch_existing_llm_provider_by_name_and_type

@@ -5,7 +5,9 @@ from unittest.mock import patch
 
 from orbyte.context.search.federated.models import DirectThreadFetch
 from orbyte.context.search.federated.slack_search import _fetch_thread_from_url
-from orbyte.context.search.federated.slack_search_utils import extract_slack_message_urls
+from orbyte.context.search.federated.slack_search_utils import (
+    extract_slack_message_urls,
+)
 
 
 class TestExtractSlackMessageUrls:

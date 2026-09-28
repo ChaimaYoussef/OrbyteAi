@@ -28,7 +28,9 @@ from orbyte.server.features.build.configs import BUILD_MODE_ALLOWED_PROVIDER_TYP
 from orbyte.server.features.build.configs import BUILD_MODE_NOT_CONFIGURED_API_KEY
 from orbyte.server.features.build.sandbox.models import LLMProviderConfig
 from orbyte.server.features.build.sandbox.models import SandboxInfo
-from orbyte.server.features.build.session.llm_config import get_all_build_mode_llm_configs
+from orbyte.server.features.build.session.llm_config import (
+    get_all_build_mode_llm_configs,
+)
 from orbyte.server.features.build.session.manager import SessionManager
 from orbyte.server.manage.llm.models import LLMProviderView
 from orbyte.server.manage.llm.models import ModelConfigurationView

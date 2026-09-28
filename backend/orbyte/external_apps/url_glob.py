@@ -18,7 +18,9 @@ def _to_regex(glob: str) -> str:
 def _validate(glob: str) -> None:
     stripped = glob.strip()
     if not stripped:
-        raise OrbyteError(OrbyteErrorCode.INVALID_INPUT, "URL pattern must not be empty.")
+        raise OrbyteError(
+            OrbyteErrorCode.INVALID_INPUT, "URL pattern must not be empty."
+        )
 
     scheme = _SCHEME_RE.match(stripped)
     if scheme is None:

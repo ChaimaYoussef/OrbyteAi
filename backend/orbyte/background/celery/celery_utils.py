@@ -15,7 +15,9 @@ from pydantic import BaseModel
 from orbyte.configs.app_configs import MAX_PRUNING_DOCUMENT_RETRIEVAL_PER_MINUTE
 from orbyte.configs.app_configs import VESPA_REQUEST_TIMEOUT
 from orbyte.connectors.connector_runner import CheckpointOutputWrapper
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.interfaces import BaseConnector
 from orbyte.connectors.interfaces import CheckpointedConnector
 from orbyte.connectors.interfaces import ConnectorCheckpoint

@@ -30,7 +30,9 @@ from orbyte.connectors.cross_connector_utils.miscellaneous_utils import (
 from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
     extract_and_stage_tabular_file,
 )
-from orbyte.connectors.cross_connector_utils.tabular_section_utils import is_tabular_file
+from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
+    is_tabular_file,
+)
 from orbyte.connectors.exceptions import ConnectorValidationError
 from orbyte.connectors.exceptions import CredentialExpiredError
 from orbyte.connectors.exceptions import InsufficientPermissionsError

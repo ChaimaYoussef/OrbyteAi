@@ -58,7 +58,9 @@ def imap_connector(
             ),
             EmailDoc(
                 subject="Hello world",
-                recipients=set(["admin@orbyte-test.com", "r@rabh.io", "raunak@onyx.app"]),
+                recipients=set(
+                    ["admin@orbyte-test.com", "r@rabh.io", "raunak@onyx.app"]
+                ),
                 body='Hello world, this is an email that contains multiple "To" recipients.',
             ),
         ]

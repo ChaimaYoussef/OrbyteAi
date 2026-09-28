@@ -5,12 +5,13 @@ Allows fully offline/air-gapped enterprise identity integration.
 """
 
 from dataclasses import dataclass
-from typing import Dict, List, Set
-from uuid import UUID
+from typing import List
 
 from sqlalchemy.orm import Session
 
-from orbyte.db.models import User, UserGroup, User__UserGroup
+from orbyte.db.models import User
+from orbyte.db.models import User__UserGroup
+from orbyte.db.models import UserGroup
 from orbyte.utils.logger import setup_logger
 
 logger = setup_logger()
@@ -59,7 +60,8 @@ class LDAPGroupSyncManager:
 
                 if not user_group:
                     logger.info(
-                        f"Creating new Orbyte UserGroup '{mapping.orbyte_group_name}' from AD sync."
+                        "Creating new Orbyte UserGroup '%s' from AD sync.",
+                        mapping.orbyte_group_name,
                     )
                     user_group = UserGroup(name=mapping.orbyte_group_name)
                     db_session.add(user_group)
@@ -77,7 +79,10 @@ class LDAPGroupSyncManager:
 
                 if not membership:
                     logger.info(
-                        f"Adding user {user.email} to group '{user_group.name}' (Curator={mapping.is_curator})."
+                        "Adding user %s to group '%s' (Curator=%s).",
+                        user.email,
+                        user_group.name,
+                        mapping.is_curator,
                     )
                     membership = User__UserGroup(
                         user_id=user.id,

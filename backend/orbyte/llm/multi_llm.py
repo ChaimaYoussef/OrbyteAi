@@ -43,7 +43,9 @@ from orbyte.llm.well_known_providers.constants import (
     AWS_BEARER_TOKEN_BEDROCK_KWARG_ENV_VAR_FORMAT,
 )
 from orbyte.llm.well_known_providers.constants import AWS_REGION_NAME_KWARG
-from orbyte.llm.well_known_providers.constants import AWS_REGION_NAME_KWARG_ENV_VAR_FORMAT
+from orbyte.llm.well_known_providers.constants import (
+    AWS_REGION_NAME_KWARG_ENV_VAR_FORMAT,
+)
 from orbyte.llm.well_known_providers.constants import AWS_SECRET_ACCESS_KEY_KWARG
 from orbyte.llm.well_known_providers.constants import (
     AWS_SECRET_ACCESS_KEY_KWARG_ENV_VAR_FORMAT,
@@ -51,7 +53,9 @@ from orbyte.llm.well_known_providers.constants import (
 from orbyte.llm.well_known_providers.constants import LM_STUDIO_API_KEY_CONFIG_KEY
 from orbyte.llm.well_known_providers.constants import OLLAMA_API_KEY_CONFIG_KEY
 from orbyte.llm.well_known_providers.constants import VERTEX_AUTH_METHOD_KWARG
-from orbyte.llm.well_known_providers.constants import VERTEX_AUTH_METHOD_WORKLOAD_IDENTITY
+from orbyte.llm.well_known_providers.constants import (
+    VERTEX_AUTH_METHOD_WORKLOAD_IDENTITY,
+)
 from orbyte.llm.well_known_providers.constants import VERTEX_CREDENTIALS_FILE_KWARG
 from orbyte.llm.well_known_providers.constants import (
     VERTEX_CREDENTIALS_FILE_KWARG_ENV_VAR_FORMAT,

@@ -98,7 +98,8 @@ class TestLLMConfigurationEndpoint:
 
         try:
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_success
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_success,
             ):
                 # This should complete without exception
                 run_test_llm_configuration(
@@ -142,7 +143,8 @@ class TestLLMConfigurationEndpoint:
 
         try:
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_failure
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_failure,
             ):
                 with pytest.raises(OrbyteError) as exc_info:
                     run_test_llm_configuration(
@@ -187,7 +189,8 @@ class TestLLMConfigurationEndpoint:
             )
 
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 # Test with api_key_changed=False - should use stored key
                 run_test_llm_configuration(
@@ -236,7 +239,8 @@ class TestLLMConfigurationEndpoint:
             )
 
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 # Test with api_key_changed=True - should use new key
                 run_test_llm_configuration(
@@ -297,7 +301,8 @@ class TestLLMConfigurationEndpoint:
             )
 
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 # Test with custom_config_changed=False - should use stored config
                 run_test_llm_configuration(
@@ -339,7 +344,8 @@ class TestLLMConfigurationEndpoint:
 
         try:
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 for model_name in test_models:
                     run_test_llm_configuration(
@@ -425,7 +431,8 @@ class TestDefaultProviderEndpoint:
 
             # Step 2: Call run_test_default_provider - should use provider 1's default model
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 run_test_default_provider(_=_create_mock_admin())
 
@@ -455,7 +462,8 @@ class TestDefaultProviderEndpoint:
 
             # Step 4: Call run_test_default_provider - should still use provider 1
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 run_test_default_provider(_=_create_mock_admin())
 
@@ -485,7 +493,8 @@ class TestDefaultProviderEndpoint:
 
             # Step 6: Call run_test_default_provider - should use new model on provider 1
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 run_test_default_provider(_=_create_mock_admin())
 
@@ -499,7 +508,8 @@ class TestDefaultProviderEndpoint:
 
             # Step 8: Call run_test_default_provider - should use provider 2
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 run_test_default_provider(_=_create_mock_admin())
 
@@ -580,7 +590,8 @@ class TestDefaultProviderEndpoint:
 
             # Test should fail
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_failure
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_failure,
             ):
                 with pytest.raises(OrbyteError) as exc_info:
                     run_test_default_provider(_=_create_mock_admin())

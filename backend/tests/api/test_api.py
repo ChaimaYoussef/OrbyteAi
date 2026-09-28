@@ -157,7 +157,9 @@ def test_versions_endpoint(client: TestClient) -> None:
     assert migration["nginx"] == "nginx:1.25.5-alpine"
 
     # Verify versions are different between stable and dev
-    assert stable["orbyte"] != dev["orbyte"], "Stable and dev versions should be different"
+    assert stable["orbyte"] != dev["orbyte"], (
+        "Stable and dev versions should be different"
+    )
 
     # Additional validation: ensure all required fields are strings
     for config_name, config in [

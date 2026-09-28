@@ -1,10 +1,14 @@
 import time
 
-from ee.orbyte.db.external_perm import fetch_external_groups_for_user_email_and_group_ids
+from ee.orbyte.db.external_perm import (
+    fetch_external_groups_for_user_email_and_group_ids,
+)
 from ee.orbyte.external_permissions.salesforce.utils import (
     get_any_salesforce_client_for_doc_id,
 )
-from ee.orbyte.external_permissions.salesforce.utils import get_objects_access_for_user_id
+from ee.orbyte.external_permissions.salesforce.utils import (
+    get_objects_access_for_user_id,
+)
 from ee.orbyte.external_permissions.salesforce.utils import (
     get_salesforce_user_id_from_email,
 )

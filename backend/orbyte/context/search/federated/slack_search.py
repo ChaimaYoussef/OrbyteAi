@@ -22,7 +22,9 @@ from orbyte.context.search.federated.models import ChannelMetadata
 from orbyte.context.search.federated.models import DirectThreadFetch
 from orbyte.context.search.federated.models import SlackMessage
 from orbyte.context.search.federated.slack_search_utils import ALL_CHANNEL_TYPES
-from orbyte.context.search.federated.slack_search_utils import build_channel_query_filter
+from orbyte.context.search.federated.slack_search_utils import (
+    build_channel_query_filter,
+)
 from orbyte.context.search.federated.slack_search_utils import build_slack_queries
 from orbyte.context.search.federated.slack_search_utils import get_channel_type
 from orbyte.context.search.federated.slack_search_utils import (

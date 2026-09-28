@@ -43,12 +43,8 @@ def fetch_join_links_for_group(
     ).all()
 
 
-def fetch_join_link_by_id(
-    db_session: Session, link_id: int
-) -> GroupJoinLink | None:
-    return db_session.scalar(
-        select(GroupJoinLink).where(GroupJoinLink.id == link_id)
-    )
+def fetch_join_link_by_id(db_session: Session, link_id: int) -> GroupJoinLink | None:
+    return db_session.scalar(select(GroupJoinLink).where(GroupJoinLink.id == link_id))
 
 
 def revoke_join_link(db_session: Session, link: GroupJoinLink) -> None:

@@ -12,7 +12,9 @@ from orbyte.document_index.interfaces_new import TenantState
 from orbyte.document_index.opensearch.opensearch_document_index import (
     OpenSearchDocumentIndex,
 )
-from orbyte.document_index.opensearch.opensearch_document_index import OpenSearchIndexPair
+from orbyte.document_index.opensearch.opensearch_document_index import (
+    OpenSearchIndexPair,
+)
 from orbyte.document_index.vespa.vespa_document_index import VespaDocumentIndex
 from orbyte.document_index.vespa.vespa_document_index import VespaIndexPair
 from orbyte.indexing.models import IndexingSetting

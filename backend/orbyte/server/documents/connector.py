@@ -25,7 +25,9 @@ from orbyte.auth.email_utils import send_email
 from orbyte.auth.permissions import require_permission
 from orbyte.auth.users import current_chat_accessible_user
 from orbyte.auth.users import current_curator_or_admin_user
-from orbyte.background.celery.tasks.pruning.tasks import try_creating_prune_generator_task
+from orbyte.background.celery.tasks.pruning.tasks import (
+    try_creating_prune_generator_task,
+)
 from orbyte.background.celery.versioned_apps.client import app as client_app
 from orbyte.configs.app_configs import EMAIL_CONFIGURED
 from orbyte.configs.app_configs import ENABLED_CONNECTOR_TYPES
@@ -44,7 +46,9 @@ from orbyte.connectors.google_utils.google_kv import build_service_account_creds
 from orbyte.connectors.google_utils.google_kv import get_auth_url
 from orbyte.connectors.google_utils.google_kv import update_credential_access_tokens
 from orbyte.connectors.google_utils.google_kv import verify_csrf
-from orbyte.connectors.google_utils.shared_constants import DB_CREDENTIALS_DICT_TOKEN_KEY
+from orbyte.connectors.google_utils.shared_constants import (
+    DB_CREDENTIALS_DICT_TOKEN_KEY,
+)
 from orbyte.connectors.google_utils.shared_constants import (
     GoogleOAuthAuthenticationMethod,
 )

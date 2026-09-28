@@ -32,7 +32,9 @@ from orbyte.document_index.opensearch.constants import (
 from orbyte.document_index.opensearch.constants import HybridSearchNormalizationPipeline
 from orbyte.document_index.opensearch.constants import HybridSearchSubqueryConfiguration
 from orbyte.document_index.opensearch.schema import ACCESS_CONTROL_LIST_FIELD_NAME
-from orbyte.document_index.opensearch.schema import ANCESTOR_HIERARCHY_NODE_IDS_FIELD_NAME
+from orbyte.document_index.opensearch.schema import (
+    ANCESTOR_HIERARCHY_NODE_IDS_FIELD_NAME,
+)
 from orbyte.document_index.opensearch.schema import CHUNK_INDEX_FIELD_NAME
 from orbyte.document_index.opensearch.schema import CONTENT_FIELD_NAME
 from orbyte.document_index.opensearch.schema import CONTENT_VECTOR_FIELD_NAME

@@ -37,7 +37,9 @@ from orbyte.connectors.google_drive.doc_conversion import (
 )
 from orbyte.connectors.google_drive.doc_conversion import build_slim_document
 from orbyte.connectors.google_drive.doc_conversion import convert_drive_item_to_document
-from orbyte.connectors.google_drive.doc_conversion import orbyte_document_id_from_drive_file
+from orbyte.connectors.google_drive.doc_conversion import (
+    orbyte_document_id_from_drive_file,
+)
 from orbyte.connectors.google_drive.doc_conversion import PermissionSyncContext
 from orbyte.connectors.google_drive.doc_conversion import WEB_VIEW_LINK_KEY
 from orbyte.connectors.google_drive.file_retrieval import crawl_folders_for_files
@@ -157,7 +159,9 @@ def _candidate_document_ids_from_file_id(file_id: str) -> list[str]:
 
     candidates: list[str] = []
     for link in [*native_doc_links, uploaded_binary_link]:
-        doc_id = orbyte_document_id_from_drive_file({WEB_VIEW_LINK_KEY: link}).rstrip("/")
+        doc_id = orbyte_document_id_from_drive_file({WEB_VIEW_LINK_KEY: link}).rstrip(
+            "/"
+        )
         if doc_id not in candidates:
             candidates.append(doc_id)
     return candidates

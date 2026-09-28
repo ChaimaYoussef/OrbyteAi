@@ -49,7 +49,9 @@ _THREAD_1_BY_ID: dict[str, dict[str, Any]] = {
         "email": "test_user_1@orbyte-test.com",
         "sections_count": 2,
         "primary_owners": set(["admin@orbyte-test.com", "test_user_1@orbyte-test.com"]),
-        "secondary_owners": set(["test-group-1@orbyte-test.com", "admin@orbyte-test.com"]),
+        "secondary_owners": set(
+            ["test-group-1@orbyte-test.com", "admin@orbyte-test.com"]
+        ),
     },
     "192edf020ae90aab": {
         "email": "test_user_2@orbyte-test.com",

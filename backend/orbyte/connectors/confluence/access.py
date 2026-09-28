@@ -35,7 +35,8 @@ def get_page_restrictions(
             ExternalAccess | None,
         ],
         fetch_versioned_implementation(
-            "orbyte.external_permissions.confluence.page_access", "get_page_restrictions"
+            "orbyte.external_permissions.confluence.page_access",
+            "get_page_restrictions",
         ),
     )
 

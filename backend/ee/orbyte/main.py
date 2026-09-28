@@ -19,7 +19,9 @@ from ee.orbyte.server.middleware.tenant_tracking import (
 )
 from ee.orbyte.server.middleware.tier_gate import add_tier_gate_middleware
 from ee.orbyte.server.oauth.api import router as ee_oauth_router
-from ee.orbyte.server.query_and_chat.query_backend import basic_router as ee_query_router
+from ee.orbyte.server.query_and_chat.query_backend import (
+    basic_router as ee_query_router,
+)
 from ee.orbyte.server.query_and_chat.search_backend import router as search_router
 from ee.orbyte.server.query_history.api import router as query_history_router
 from ee.orbyte.server.reporting.usage_export_api import router as usage_export_router

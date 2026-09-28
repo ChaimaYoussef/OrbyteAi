@@ -26,7 +26,9 @@ from orbyte.document_index.opensearch.client import OpenSearchUpdateError
 from orbyte.document_index.opensearch.opensearch_document_index import (
     OpenSearchDocumentIndex,
 )
-from orbyte.document_index.opensearch.opensearch_document_index import OpenSearchIndexPair
+from orbyte.document_index.opensearch.opensearch_document_index import (
+    OpenSearchIndexPair,
+)
 from orbyte.document_index.opensearch.schema import get_opensearch_doc_chunk_id
 from shared_configs.configs import POSTGRES_DEFAULT_SCHEMA
 

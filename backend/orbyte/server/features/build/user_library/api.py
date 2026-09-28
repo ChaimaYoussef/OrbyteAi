@@ -40,7 +40,9 @@ from orbyte.server.features.build.db.user_library import store_user_file
 from orbyte.server.features.build.sandbox.user_library import (
     sync_user_library_to_active_sandboxes,
 )
-from orbyte.server.features.build.utils import sanitize_filename as api_sanitize_filename
+from orbyte.server.features.build.utils import (
+    sanitize_filename as api_sanitize_filename,
+)
 from orbyte.utils.logger import setup_logger
 
 logger = setup_logger()

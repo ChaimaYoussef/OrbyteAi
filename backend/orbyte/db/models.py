@@ -4843,7 +4843,9 @@ class GroupJoinLink(Base):
 
     # If False, the link is single-use (rejected once use_count reaches 1).
     is_reusable: Mapped[bool] = mapped_column(Boolean, nullable=False)
-    use_count: Mapped[int] = mapped_column(Integer, server_default=text("0"), nullable=False)
+    use_count: Mapped[int] = mapped_column(
+        Integer, server_default=text("0"), nullable=False
+    )
 
     expires_at: Mapped[datetime.datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True

@@ -12,7 +12,9 @@ from orbyte.chat.models import ChatBasicResponse
 from orbyte.context.search.models import Tag
 from orbyte.orbytebot.slack.constants import SLACK_CHANNEL_REF_PATTERN
 from orbyte.orbytebot.slack.handlers.handle_regular_answer import handle_regular_answer
-from orbyte.orbytebot.slack.handlers.handle_regular_answer import resolve_channel_references
+from orbyte.orbytebot.slack.handlers.handle_regular_answer import (
+    resolve_channel_references,
+)
 from orbyte.orbytebot.slack.handlers.handle_regular_answer import (
     SLACK_PERSONA_ACCESS_DENIED_MESSAGE,
 )

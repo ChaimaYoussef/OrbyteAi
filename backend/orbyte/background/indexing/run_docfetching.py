@@ -40,7 +40,9 @@ from orbyte.connectors.models import HierarchyNode
 from orbyte.connectors.models import TextSection
 from orbyte.db.connector import mark_ccpair_with_indexing_trigger
 from orbyte.db.connector_credential_pair import get_connector_credential_pair_from_id
-from orbyte.db.connector_credential_pair import get_last_successful_attempt_poll_range_end
+from orbyte.db.connector_credential_pair import (
+    get_last_successful_attempt_poll_range_end,
+)
 from orbyte.db.connector_credential_pair import update_connector_credential_pair
 from orbyte.db.constants import CONNECTOR_VALIDATION_ERROR_MESSAGE_PREFIX
 from orbyte.db.engine.sql_engine import get_session_with_current_tenant

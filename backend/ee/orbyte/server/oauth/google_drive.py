@@ -23,7 +23,9 @@ from orbyte.connectors.google_utils.google_auth import sanitize_oauth_credential
 from orbyte.connectors.google_utils.shared_constants import (
     DB_CREDENTIALS_AUTHENTICATION_METHOD,
 )
-from orbyte.connectors.google_utils.shared_constants import DB_CREDENTIALS_DICT_TOKEN_KEY
+from orbyte.connectors.google_utils.shared_constants import (
+    DB_CREDENTIALS_DICT_TOKEN_KEY,
+)
 from orbyte.connectors.google_utils.shared_constants import (
     DB_CREDENTIALS_PRIMARY_ADMIN_KEY,
 )

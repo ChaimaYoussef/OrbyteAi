@@ -128,7 +128,9 @@ def create_mock_issue() -> Callable[..., MagicMock]:
 
 def test_load_credentials(jira_connector: JiraConnector) -> None:
     """Test loading credentials"""
-    with patch("orbyte.connectors.jira.connector.build_jira_client") as mock_build_client:
+    with patch(
+        "orbyte.connectors.jira.connector.build_jira_client"
+    ) as mock_build_client:
         mock_build_client.return_value = jira_connector._jira_client
         credentials = {
             "jira_user_email": "user@example.com",

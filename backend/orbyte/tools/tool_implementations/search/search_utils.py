@@ -15,7 +15,9 @@ from orbyte.document_index.vespa.shared_utils.utils import (
 from orbyte.llm.interfaces import LLM
 from orbyte.prompts.prompt_utils import clean_up_source
 from orbyte.secondary_llm_flows.document_filter import classify_section_relevance
-from orbyte.tools.tool_implementations.search.constants import FULL_DOC_NUM_CHUNKS_AROUND
+from orbyte.tools.tool_implementations.search.constants import (
+    FULL_DOC_NUM_CHUNKS_AROUND,
+)
 from orbyte.tools.tool_implementations.search.constants import RRF_K_VALUE
 from orbyte.utils.logger import setup_logger
 

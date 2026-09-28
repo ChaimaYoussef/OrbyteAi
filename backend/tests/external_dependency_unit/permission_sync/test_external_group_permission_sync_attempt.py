@@ -28,7 +28,9 @@ from orbyte.db.permission_sync_attempt import (
     get_recent_external_group_sync_attempts_for_cc_pair,
 )
 from orbyte.db.permission_sync_attempt import mark_external_group_sync_attempt_failed
-from orbyte.db.permission_sync_attempt import mark_external_group_sync_attempt_in_progress
+from orbyte.db.permission_sync_attempt import (
+    mark_external_group_sync_attempt_in_progress,
+)
 from tests.external_dependency_unit.conftest import create_test_user
 
 

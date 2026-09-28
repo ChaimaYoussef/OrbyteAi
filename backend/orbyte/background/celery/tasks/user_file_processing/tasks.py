@@ -575,7 +575,9 @@ def check_for_user_file_delete(self: Task, *, tenant_id: str) -> None:
         # NOTE: must use the broker's Redis client (not redis_client) because
         # Celery queues live on a separate Redis DB with CELERY_SEPARATOR keys.
         r_celery = celery_get_broker_client(self.app)
-        queue_len = celery_get_queue_length(OrbyteCeleryQueues.USER_FILE_DELETE, r_celery)
+        queue_len = celery_get_queue_length(
+            OrbyteCeleryQueues.USER_FILE_DELETE, r_celery
+        )
         if queue_len > USER_FILE_DELETE_MAX_QUEUE_DEPTH:
             task_logger.warning(
                 f"check_for_user_file_delete - Queue depth {queue_len} exceeds "

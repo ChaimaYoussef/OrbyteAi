@@ -13,7 +13,9 @@ from uuid import UUID
 
 import pytest
 
-from orbyte.server.features.build.sandbox.opencode.serve_client import OpencodeServeClient
+from orbyte.server.features.build.sandbox.opencode.serve_client import (
+    OpencodeServeClient,
+)
 from orbyte.server.features.build.sandbox.serve_transport import _ServeMixin
 from orbyte.server.features.build.sandbox.serve_transport import ServeConnectionInfo
 

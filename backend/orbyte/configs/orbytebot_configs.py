@@ -5,7 +5,9 @@ import os
 #####
 ORBYTE_BOT_NUM_RETRIES = int(os.environ.get("ORBYTE_BOT_NUM_RETRIES", "5"))
 # Number of docs to display in "Reference Documents"
-ORBYTE_BOT_NUM_DOCS_TO_DISPLAY = int(os.environ.get("ORBYTE_BOT_NUM_DOCS_TO_DISPLAY", "5"))
+ORBYTE_BOT_NUM_DOCS_TO_DISPLAY = int(
+    os.environ.get("ORBYTE_BOT_NUM_DOCS_TO_DISPLAY", "5")
+)
 # If the LLM fails to answer, Orbyte can still show the "Reference Documents"
 ORBYTE_BOT_DISABLE_DOCS_ONLY_ANSWER = os.environ.get(
     "ORBYTE_BOT_DISABLE_DOCS_ONLY_ANSWER", ""

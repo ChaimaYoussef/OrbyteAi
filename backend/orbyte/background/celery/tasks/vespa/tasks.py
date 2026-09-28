@@ -21,7 +21,9 @@ from orbyte.background.celery.tasks.shared.tasks import LIGHT_TIME_LIMIT
 from orbyte.background.celery.tasks.shared.tasks import OrbyteCeleryTaskCompletionStatus
 from orbyte.background.celery.tasks.vespa.document_sync import DOCUMENT_SYNC_FENCE_KEY
 from orbyte.background.celery.tasks.vespa.document_sync import get_document_sync_payload
-from orbyte.background.celery.tasks.vespa.document_sync import get_document_sync_remaining
+from orbyte.background.celery.tasks.vespa.document_sync import (
+    get_document_sync_remaining,
+)
 from orbyte.background.celery.tasks.vespa.document_sync import reset_document_sync
 from orbyte.background.celery.tasks.vespa.document_sync import (
     try_generate_stale_document_sync_tasks,

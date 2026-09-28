@@ -1687,9 +1687,10 @@ def run_llm_step_pkt_generator(
         # tool-call payload, then any buffered while checking for split
         # "<function_calls" markers.
         leak_guarded_tail = leading_leak_filter.flush()
-        filtered_content_tail = xml_tool_call_content_filter.process(
-            leak_guarded_tail
-        ) + xml_tool_call_content_filter.flush()
+        filtered_content_tail = (
+            xml_tool_call_content_filter.process(leak_guarded_tail)
+            + xml_tool_call_content_filter.flush()
+        )
         if filtered_content_tail:
             yield from _emit_content_chunk(filtered_content_tail)
 

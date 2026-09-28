@@ -928,7 +928,9 @@ def monitor_celery_queues_helper(
     n_docfetching = celery_get_queue_length(
         OrbyteCeleryQueues.CONNECTOR_DOC_FETCHING, r_celery
     )
-    n_docprocessing = celery_get_queue_length(OrbyteCeleryQueues.DOCPROCESSING, r_celery)
+    n_docprocessing = celery_get_queue_length(
+        OrbyteCeleryQueues.DOCPROCESSING, r_celery
+    )
     n_port = celery_get_queue_length(OrbyteCeleryQueues.PORT, r_celery)
 
     n_user_file_processing = celery_get_queue_length(
@@ -941,7 +943,9 @@ def monitor_celery_queues_helper(
         OrbyteCeleryQueues.USER_FILE_DELETE, r_celery
     )
     n_sync = celery_get_queue_length(OrbyteCeleryQueues.VESPA_METADATA_SYNC, r_celery)
-    n_deletion = celery_get_queue_length(OrbyteCeleryQueues.CONNECTOR_DELETION, r_celery)
+    n_deletion = celery_get_queue_length(
+        OrbyteCeleryQueues.CONNECTOR_DELETION, r_celery
+    )
     n_pruning = celery_get_queue_length(OrbyteCeleryQueues.CONNECTOR_PRUNING, r_celery)
     n_permissions_sync = celery_get_queue_length(
         OrbyteCeleryQueues.CONNECTOR_DOC_PERMISSIONS_SYNC, r_celery

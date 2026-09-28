@@ -23,7 +23,9 @@ from orbyte.connectors.confluence.access import (
     get_page_restrictions_with_per_ancestor_fetch,
 )
 from orbyte.connectors.confluence.orbyte_confluence import Confcloud77618Error
-from orbyte.connectors.confluence.orbyte_confluence import extract_text_from_confluence_html
+from orbyte.connectors.confluence.orbyte_confluence import (
+    extract_text_from_confluence_html,
+)
 from orbyte.connectors.confluence.orbyte_confluence import OrbyteConfluence
 from orbyte.connectors.confluence.utils import build_confluence_document_id
 from orbyte.connectors.confluence.utils import convert_attachment_to_content

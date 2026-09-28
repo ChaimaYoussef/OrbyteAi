@@ -589,7 +589,8 @@ class TestAutoModeSyncFeature:
 
             # Step 6: Run test_default_provider and verify it uses provider 2's model
             with patch(
-                "orbyte.server.manage.llm.api.test_llm", side_effect=mock_test_llm_capture
+                "orbyte.server.manage.llm.api.test_llm",
+                side_effect=mock_test_llm_capture,
             ):
                 run_test_default_provider(_=_create_mock_admin())
 

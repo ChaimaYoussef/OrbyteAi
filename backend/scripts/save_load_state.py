@@ -97,7 +97,9 @@ def load_vespa(filename: str) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Orbyte checkpoint saving and loading.")
+    parser = argparse.ArgumentParser(
+        description="Orbyte checkpoint saving and loading."
+    )
     parser.add_argument(
         "--save", action="store_true", help="Save Orbyte state to directory."
     )

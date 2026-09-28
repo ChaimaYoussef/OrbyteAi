@@ -9,7 +9,9 @@ import requests
 from orbyte.configs.app_configs import INDEX_BATCH_SIZE
 from orbyte.configs.app_configs import REQUEST_TIMEOUT_SECONDS
 from orbyte.configs.constants import DocumentSource
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.document360.utils import flatten_child_categories
 from orbyte.connectors.interfaces import GenerateDocumentsOutput
 from orbyte.connectors.interfaces import LoadConnector

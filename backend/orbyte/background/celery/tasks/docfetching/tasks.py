@@ -18,7 +18,9 @@ from orbyte.background.celery.tasks.docfetching.worker_shutdown import (
 )
 from orbyte.background.celery.tasks.docprocessing.heartbeat import start_heartbeat
 from orbyte.background.celery.tasks.docprocessing.heartbeat import stop_heartbeat
-from orbyte.background.celery.tasks.docprocessing.tasks import ConnectorIndexingLogBuilder
+from orbyte.background.celery.tasks.docprocessing.tasks import (
+    ConnectorIndexingLogBuilder,
+)
 from orbyte.background.celery.tasks.docprocessing.utils import IndexingCallback
 from orbyte.background.celery.tasks.models import DocProcessingContext
 from orbyte.background.celery.tasks.models import IndexingWatchdogTerminalStatus
@@ -41,7 +43,9 @@ from orbyte.db.index_attempt import mark_attempt_failed
 from orbyte.db.index_attempt import mark_attempt_interrupted
 from orbyte.db.indexing_coordination import IndexingCoordination
 from orbyte.redis.redis_connector import RedisConnector
-from orbyte.server.metrics.connector_health_metrics import on_index_attempt_status_change
+from orbyte.server.metrics.connector_health_metrics import (
+    on_index_attempt_status_change,
+)
 from orbyte.utils.logger import setup_logger
 from orbyte.utils.variable_functionality import global_version
 from shared_configs.configs import SENTRY_CELERY_TRACES_SAMPLE_RATE

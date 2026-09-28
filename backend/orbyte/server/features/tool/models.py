@@ -57,4 +57,3 @@ class ToolSnapshot(BaseModel):
 class Header(BaseModel):
     key: str
     value: str
-

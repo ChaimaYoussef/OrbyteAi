@@ -13,9 +13,13 @@ from orbyte.configs.constants import FileOrigin
 from orbyte.connectors.cross_connector_utils.miscellaneous_utils import (
     datetime_from_utc_timestamp,
 )
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rl_requests
-from orbyte.connectors.cross_connector_utils.tabular_section_utils import is_tabular_file
+from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
+    is_tabular_file,
+)
 from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
     tabular_file_to_sections,
 )

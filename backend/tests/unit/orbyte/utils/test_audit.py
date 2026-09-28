@@ -92,7 +92,9 @@ def test_routes_to_per_class_child_logger(caplog: pytest.LogCaptureFixture) -> N
     with caplog.at_level(logging.INFO, logger="orbyte.audit"):
         emit_audit_event(AuditAction.LOGIN, AuditOutcome.SUCCESS)
 
-    auth_records = [r for r in caplog.records if r.name == "orbyte.audit.authentication"]
+    auth_records = [
+        r for r in caplog.records if r.name == "orbyte.audit.authentication"
+    ]
     assert len(auth_records) == 1
 
 

@@ -273,7 +273,9 @@ class OrbyteWebCrawler(WebContentProvider):
                     # fallback's own result is the truth.
                     return fallback
 
-            logger.warning("Orbyte crawler received %s for %s", response.status_code, url)
+            logger.warning(
+                "Orbyte crawler received %s for %s", response.status_code, url
+            )
             return _failed_result(
                 url, _failure_reason_for_status(response, has_cf_signals)
             )

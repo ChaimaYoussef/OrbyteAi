@@ -43,7 +43,6 @@ from orbyte.configs.app_configs import POSTGRES_API_SERVER_POOL_SIZE
 from orbyte.configs.app_configs import POSTGRES_API_SERVER_READ_ONLY_POOL_OVERFLOW
 from orbyte.configs.app_configs import POSTGRES_API_SERVER_READ_ONLY_POOL_SIZE
 from orbyte.configs.app_configs import SYSTEM_RECURSION_LIMIT
-from orbyte.configs.app_configs import USER_AUTH_SECRET
 from orbyte.configs.app_configs import WEB_DOMAIN
 from orbyte.configs.constants import POSTGRES_WEB_APP_NAME
 from orbyte.db.engine.async_sql_engine import get_sqlalchemy_async_engine
@@ -78,7 +77,9 @@ from orbyte.server.features.input_prompt.api import (
     admin_router as admin_input_prompt_router,
 )
 from orbyte.server.features.input_prompt.api import basic_router as input_prompt_router
-from orbyte.server.features.join_link.api import public_router as join_link_public_router
+from orbyte.server.features.join_link.api import (
+    public_router as join_link_public_router,
+)
 from orbyte.server.features.join_link.api import router as join_link_router
 from orbyte.server.features.notifications.api import router as notification_router
 from orbyte.server.features.password.api import router as password_router
@@ -126,12 +127,16 @@ from orbyte.server.middleware.rate_limiting import setup_auth_limiter
 from orbyte.server.orbyte_api.ingestion import router as orbyte_api_router
 from orbyte.server.pat.api import router as pat_router
 from orbyte.server.query_and_chat.chat_backend import router as chat_router
-from orbyte.server.query_and_chat.query_backend import admin_router as admin_query_router
+from orbyte.server.query_and_chat.query_backend import (
+    admin_router as admin_query_router,
+)
 from orbyte.server.query_and_chat.query_backend import basic_router as query_router
 from orbyte.server.security.api import admin_router as security_admin_router
 from orbyte.server.settings.api import admin_router as settings_admin_router
 from orbyte.server.settings.api import basic_router as settings_router
-from orbyte.server.token_rate_limits.api import router as token_rate_limit_settings_router
+from orbyte.server.token_rate_limits.api import (
+    router as token_rate_limit_settings_router,
+)
 from orbyte.server.utils import BasicAuthenticationError
 from orbyte.setup import setup_multitenant_orbyte
 from orbyte.setup import setup_orbyte

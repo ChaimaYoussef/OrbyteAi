@@ -174,7 +174,9 @@ class TestGetLlmMaxOutputTokens:
 class TestGetMaxInputTokens:
     def test_subtracts_reserved_output_tokens(self) -> None:
         model_map = {"openai/gpt-4o": {"max_input_tokens": 128000}}
-        with patch("orbyte.llm.model_capabilities.get_model_map", return_value=model_map):
+        with patch(
+            "orbyte.llm.model_capabilities.get_model_map", return_value=model_map
+        ):
             assert (
                 get_max_input_tokens(
                     model_name="gpt-4o",
@@ -186,7 +188,9 @@ class TestGetMaxInputTokens:
 
     def test_non_positive_budget_falls_back(self) -> None:
         model_map = {"tiny/model": {"max_input_tokens": 100}}
-        with patch("orbyte.llm.model_capabilities.get_model_map", return_value=model_map):
+        with patch(
+            "orbyte.llm.model_capabilities.get_model_map", return_value=model_map
+        ):
             assert (
                 get_max_input_tokens(
                     model_name="model",
@@ -205,7 +209,9 @@ class TestGetMaxInputTokens:
                 "max_tokens": None,
             }
         }
-        with patch("orbyte.llm.model_capabilities.get_model_map", return_value=model_map):
+        with patch(
+            "orbyte.llm.model_capabilities.get_model_map", return_value=model_map
+        ):
             result = get_max_input_tokens(
                 model_name="gpt-oss:20b-cloud",
                 model_provider="ollama_chat",

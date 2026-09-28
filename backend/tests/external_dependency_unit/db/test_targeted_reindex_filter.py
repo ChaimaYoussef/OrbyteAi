@@ -11,7 +11,9 @@ from collections.abc import Generator
 import pytest
 from sqlalchemy.orm import Session
 
-from orbyte.db.connector_credential_pair import get_last_successful_attempt_poll_range_end
+from orbyte.db.connector_credential_pair import (
+    get_last_successful_attempt_poll_range_end,
+)
 from orbyte.db.enums import IndexingStatus
 from orbyte.db.index_attempt import cancel_indexing_attempts_for_ccpair
 from orbyte.db.index_attempt import count_index_attempts_for_cc_pair

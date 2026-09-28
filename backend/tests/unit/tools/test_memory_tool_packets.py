@@ -13,7 +13,9 @@ from orbyte.server.query_and_chat.streaming_models import MemoryToolDelta
 from orbyte.server.query_and_chat.streaming_models import MemoryToolStart
 from orbyte.server.query_and_chat.streaming_models import SectionEnd
 from orbyte.tools.tool_implementations.memory.memory_tool import MemoryTool
-from orbyte.tools.tool_implementations.memory.memory_tool import MemoryToolOverrideKwargs
+from orbyte.tools.tool_implementations.memory.memory_tool import (
+    MemoryToolOverrideKwargs,
+)
 from orbyte.tools.tool_implementations.memory.models import MemoryToolResponse
 
 

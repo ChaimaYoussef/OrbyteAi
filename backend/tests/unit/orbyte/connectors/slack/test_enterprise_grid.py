@@ -125,7 +125,9 @@ class TestGetChannelsAcrossTeams:
     def test_iterates_each_team_and_concatenates(self) -> None:
         team_one_channels = [_channel("C1"), _channel("C2")]
         team_two_channels = [_channel("C3")]
-        with patch("orbyte.connectors.slack.connector.get_channels") as mock_get_channels:
+        with patch(
+            "orbyte.connectors.slack.connector.get_channels"
+        ) as mock_get_channels:
             mock_get_channels.side_effect = [team_one_channels, team_two_channels]
             result = get_channels_across_teams(MagicMock(), ["T1", "T2"])
             assert [c["id"] for c in result] == ["C1", "C2", "C3"]
@@ -135,7 +137,9 @@ class TestGetChannelsAcrossTeams:
 
     def test_dedupes_org_shared_channels_by_id(self) -> None:
         shared = _channel("CSHARED", is_org_shared=True)
-        with patch("orbyte.connectors.slack.connector.get_channels") as mock_get_channels:
+        with patch(
+            "orbyte.connectors.slack.connector.get_channels"
+        ) as mock_get_channels:
             mock_get_channels.side_effect = [
                 [shared, _channel("C1")],
                 [shared, _channel("C2")],
@@ -144,7 +148,9 @@ class TestGetChannelsAcrossTeams:
             assert [c["id"] for c in result] == ["CSHARED", "C1", "C2"]
 
     def test_empty_team_list_returns_empty(self) -> None:
-        with patch("orbyte.connectors.slack.connector.get_channels") as mock_get_channels:
+        with patch(
+            "orbyte.connectors.slack.connector.get_channels"
+        ) as mock_get_channels:
             assert get_channels_across_teams(MagicMock(), []) == []
             mock_get_channels.assert_not_called()
 
@@ -154,7 +160,9 @@ class TestGetChannelsAcrossTeams:
         # lets downstream URL resolution work without an extra API call.
         ch_no_team = _channel("C1")
         ch_with_team = _channel("C2", team="T_EXISTING")
-        with patch("orbyte.connectors.slack.connector.get_channels") as mock_get_channels:
+        with patch(
+            "orbyte.connectors.slack.connector.get_channels"
+        ) as mock_get_channels:
             mock_get_channels.side_effect = [[ch_no_team, ch_with_team]]
             result = get_channels_across_teams(MagicMock(), ["T_QUERIED"])
             stamped = {c["id"]: c.get("team") for c in result}

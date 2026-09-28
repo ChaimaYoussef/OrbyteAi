@@ -8,7 +8,6 @@ Provides advanced security rules for Orbyte join links:
 
 from datetime import datetime
 from datetime import timezone
-import re
 from typing import NamedTuple
 
 

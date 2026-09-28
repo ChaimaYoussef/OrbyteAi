@@ -201,7 +201,9 @@ def test_user_acl_has_no_domain_token_without_synced_membership() -> None:
     )
     with (
         patch("ee.orbyte.access.access.fetch_user_groups_for_user", return_value=[]),
-        patch("ee.orbyte.access.access.fetch_external_groups_for_user", return_value=[]),
+        patch(
+            "ee.orbyte.access.access.fetch_external_groups_for_user", return_value=[]
+        ),
         patch(
             "ee.orbyte.access.access.get_acl_for_user_without_groups",
             return_value=set(),

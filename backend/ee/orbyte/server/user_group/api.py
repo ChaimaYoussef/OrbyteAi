@@ -168,7 +168,9 @@ def rename_user_group_endpoint(
 ) -> UserGroup:
     group = fetch_user_group(db_session, rename_request.id)
     if group and group.is_default:
-        raise OrbyteError(OrbyteErrorCode.CONFLICT, "Cannot rename a default system group.")
+        raise OrbyteError(
+            OrbyteErrorCode.CONFLICT, "Cannot rename a default system group."
+        )
     try:
         return UserGroup.from_model(
             rename_user_group(
@@ -259,7 +261,9 @@ def delete_user_group(
 ) -> None:
     group = fetch_user_group(db_session, user_group_id)
     if group and group.is_default:
-        raise OrbyteError(OrbyteErrorCode.CONFLICT, "Cannot delete a default system group.")
+        raise OrbyteError(
+            OrbyteErrorCode.CONFLICT, "Cannot delete a default system group."
+        )
     try:
         prepare_user_group_for_deletion(db_session, user_group_id)
     except ValueError as e:

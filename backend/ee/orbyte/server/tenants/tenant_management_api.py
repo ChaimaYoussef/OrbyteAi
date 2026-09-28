@@ -2,7 +2,9 @@ from fastapi import APIRouter
 from fastapi import Depends
 
 from ee.orbyte.server.tenants.models import TenantByDomainResponse
-from ee.orbyte.server.tenants.provisioning import get_tenant_by_domain_from_control_plane
+from ee.orbyte.server.tenants.provisioning import (
+    get_tenant_by_domain_from_control_plane,
+)
 from orbyte.auth.permissions import require_permission
 from orbyte.auth.users import User
 from orbyte.db.enums import Permission

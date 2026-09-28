@@ -50,7 +50,9 @@ from orbyte.document_index.opensearch.opensearch_document_index import (
 from orbyte.document_index.opensearch.opensearch_document_index import (
     OpenSearchDocumentIndex,
 )
-from orbyte.document_index.opensearch.opensearch_document_index import OpenSearchIndexPair
+from orbyte.document_index.opensearch.opensearch_document_index import (
+    OpenSearchIndexPair,
+)
 from orbyte.document_index.opensearch.schema import DocumentChunk
 from orbyte.document_index.opensearch.schema import DocumentSchema
 from orbyte.document_index.opensearch.schema import get_opensearch_doc_chunk_id

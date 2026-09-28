@@ -13,7 +13,9 @@ from unittest.mock import patch
 import pytest
 
 from orbyte.file_processing.image_summarization import _summarize_image
-from orbyte.file_processing.image_summarization import summarize_image_with_error_handling
+from orbyte.file_processing.image_summarization import (
+    summarize_image_with_error_handling,
+)
 
 
 class TestSummarizeImageErrorMessage:

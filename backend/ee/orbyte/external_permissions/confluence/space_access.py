@@ -1,5 +1,7 @@
 from ee.orbyte.configs.app_configs import CONFLUENCE_ANONYMOUS_ACCESS_IS_PUBLIC
-from ee.orbyte.external_permissions.confluence.constants import ALL_CONF_EMAILS_GROUP_NAME
+from ee.orbyte.external_permissions.confluence.constants import (
+    ALL_CONF_EMAILS_GROUP_NAME,
+)
 from ee.orbyte.external_permissions.confluence.constants import REQUEST_PAGINATION_LIMIT
 from ee.orbyte.external_permissions.confluence.constants import (
     SPACE_PERMISSION_OPERATION_READ,
@@ -13,7 +15,9 @@ from ee.orbyte.external_permissions.confluence.constants import (
 from ee.orbyte.external_permissions.confluence.constants import (
     SPACE_PERMISSION_TARGET_TYPE_SPACE,
 )
-from ee.orbyte.external_permissions.confluence.constants import VIEWSPACE_PERMISSION_TYPE
+from ee.orbyte.external_permissions.confluence.constants import (
+    VIEWSPACE_PERMISSION_TYPE,
+)
 from orbyte.access.models import ExternalAccess
 from orbyte.access.utils import build_ext_group_name_for_orbyte
 from orbyte.configs.constants import DocumentSource

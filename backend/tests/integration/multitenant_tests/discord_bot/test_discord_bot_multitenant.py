@@ -32,7 +32,9 @@ class TestBotConfigIsolationCloudMode:
         with patch("orbyte.configs.app_configs.AUTH_TYPE", AuthType.CLOUD):
             from fastapi import HTTPException
 
-            from orbyte.server.manage.discord_bot.api import _check_bot_config_api_access
+            from orbyte.server.manage.discord_bot.api import (
+                _check_bot_config_api_access,
+            )
 
             with pytest.raises(HTTPException) as exc_info:
                 _check_bot_config_api_access()

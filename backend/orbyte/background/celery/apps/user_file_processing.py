@@ -12,7 +12,9 @@ from celery.signals import worker_ready
 from celery.signals import worker_shutdown
 
 import orbyte.background.celery.apps.app_base as app_base
-from orbyte.configs.constants import POSTGRES_CELERY_WORKER_USER_FILE_PROCESSING_APP_NAME
+from orbyte.configs.constants import (
+    POSTGRES_CELERY_WORKER_USER_FILE_PROCESSING_APP_NAME,
+)
 from orbyte.db.engine.sql_engine import SqlEngine
 from orbyte.utils.logger import setup_logger
 from shared_configs.configs import MULTI_TENANT

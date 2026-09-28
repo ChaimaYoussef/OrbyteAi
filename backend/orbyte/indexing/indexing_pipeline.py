@@ -53,7 +53,9 @@ from orbyte.document_index.document_metadata import DocumentMetadata
 from orbyte.document_index.interfaces_new import DocumentIndex
 from orbyte.document_index.interfaces_new import DocumentInsertionRecord
 from orbyte.document_index.interfaces_new import IndexingMetadata
-from orbyte.file_processing.image_summarization import summarize_image_with_error_handling
+from orbyte.file_processing.image_summarization import (
+    summarize_image_with_error_handling,
+)
 from orbyte.file_store.file_store import get_default_file_store
 from orbyte.file_store.staging import promote_staged_file
 from orbyte.hooks.executor import execute_hook

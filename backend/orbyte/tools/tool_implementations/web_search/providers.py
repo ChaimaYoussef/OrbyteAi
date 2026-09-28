@@ -10,9 +10,13 @@ from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
 from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
     DEFAULT_MAX_PDF_SIZE_BYTES,
 )
-from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import OrbyteWebCrawler
+from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
+    OrbyteWebCrawler,
+)
 from orbyte.tools.tool_implementations.open_url.tavily import TavilyExtractClient
-from orbyte.tools.tool_implementations.web_search.clients.brave_client import BraveClient
+from orbyte.tools.tool_implementations.web_search.clients.brave_client import (
+    BraveClient,
+)
 from orbyte.tools.tool_implementations.web_search.clients.exa_client import ExaClient
 from orbyte.tools.tool_implementations.web_search.clients.google_pse_client import (
     GooglePSEClient,

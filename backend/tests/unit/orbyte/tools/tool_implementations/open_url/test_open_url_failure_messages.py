@@ -7,11 +7,11 @@ URL's `failure_reason` so the model knows why and won't retry verbatim.
 from __future__ import annotations
 
 from orbyte.tools.tool_implementations.open_url.models import FailedFetch
-from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import FailureReason
 from orbyte.tools.tool_implementations.open_url.open_url_tool import (
     _build_failure_message,
 )
 from orbyte.tools.tool_implementations.open_url.open_url_tool import _format_failed_url
+from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import FailureReason
 
 
 def test_format_failed_url_with_reason() -> None:

@@ -1264,7 +1264,9 @@ class TestEmptyLlmResponseClassification:
     def test_openai_empty_stream_is_classified_as_budget_exceeded(
         self, monkeypatch: pytest.MonkeyPatch
     ) -> None:
-        monkeypatch.setattr("orbyte.chat.llm_loop.is_true_openai_model", lambda *_: True)
+        monkeypatch.setattr(
+            "orbyte.chat.llm_loop.is_true_openai_model", lambda *_: True
+        )
 
         err = _build_empty_llm_response_error(
             llm=self._make_llm(),
@@ -1285,7 +1287,9 @@ class TestEmptyLlmResponseClassification:
     def test_reasoning_only_response_uses_generic_empty_response_error(
         self, monkeypatch: pytest.MonkeyPatch
     ) -> None:
-        monkeypatch.setattr("orbyte.chat.llm_loop.is_true_openai_model", lambda *_: True)
+        monkeypatch.setattr(
+            "orbyte.chat.llm_loop.is_true_openai_model", lambda *_: True
+        )
 
         err = _build_empty_llm_response_error(
             llm=self._make_llm(),

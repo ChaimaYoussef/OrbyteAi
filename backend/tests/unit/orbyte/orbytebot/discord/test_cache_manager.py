@@ -46,7 +46,9 @@ class TestCacheInitialization:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config1, mock_config2],
@@ -86,7 +88,9 @@ class TestCacheInitialization:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],
@@ -161,7 +165,9 @@ class TestCacheUpdates:
         mock_config.enabled = True
 
         with (
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],
@@ -189,7 +195,9 @@ class TestCacheUpdates:
         mock_config.enabled = False  # Disabled!
 
         with (
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],
@@ -310,7 +318,9 @@ class TestAPIKeyProvisioning:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],
@@ -348,7 +358,9 @@ class TestAPIKeyProvisioning:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],
@@ -401,7 +413,9 @@ class TestGatedTenantHandling:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: gated_tenants,
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 side_effect=mock_get_configs,
@@ -436,7 +450,9 @@ class TestGatedTenantHandling:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),
             ) as mock_ee,
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[],
@@ -468,7 +484,9 @@ class TestGatedTenantHandling:
                 "orbyte.orbytebot.discord.cache.fetch_ee_implementation_or_noop",
                 return_value=lambda: set(),  # No gated tenants
             ),
-            patch("orbyte.orbytebot.discord.cache.get_session_with_tenant") as mock_session,
+            patch(
+                "orbyte.orbytebot.discord.cache.get_session_with_tenant"
+            ) as mock_session,
             patch(
                 "orbyte.orbytebot.discord.cache.get_guild_configs",
                 return_value=[mock_config],

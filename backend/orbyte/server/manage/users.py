@@ -636,7 +636,9 @@ def bulk_invite_users(
             try:
                 write_invited_users(initial_invited_users)  # Reset to original state
                 fetch_ee_implementation_or_noop(
-                    "orbyte.server.tenants.user_mapping", "remove_users_from_tenant", None
+                    "orbyte.server.tenants.user_mapping",
+                    "remove_users_from_tenant",
+                    None,
                 )(new_invited_emails, tenant_id)
             finally:
                 # Release the counter reservation regardless of whether the KV /

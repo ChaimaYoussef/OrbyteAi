@@ -10,7 +10,9 @@ from typing import Any
 
 from orbyte.configs.constants import DocumentSource
 from orbyte.document_index.interfaces_new import TenantState
-from orbyte.document_index.opensearch.schema import ANCESTOR_HIERARCHY_NODE_IDS_FIELD_NAME
+from orbyte.document_index.opensearch.schema import (
+    ANCESTOR_HIERARCHY_NODE_IDS_FIELD_NAME,
+)
 from orbyte.document_index.opensearch.schema import DOCUMENT_ID_FIELD_NAME
 from orbyte.document_index.opensearch.schema import DOCUMENT_SETS_FIELD_NAME
 from orbyte.document_index.opensearch.schema import PERSONAS_FIELD_NAME

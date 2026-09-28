@@ -274,7 +274,9 @@ def check_for_pruning(self: Task, *, tenant_id: str) -> bool | None:
             # any given cycle.
             if prune_dispatched:
                 maybe_mark_tenant_active(tenant_id, caller="check_for_pruning")
-            r.set(OrbyteRedisSignals.BLOCK_PRUNING, 1, ex=_get_pruning_block_expiration())
+            r.set(
+                OrbyteRedisSignals.BLOCK_PRUNING, 1, ex=_get_pruning_block_expiration()
+            )
 
         # we want to run this less frequently than the overall task
         lock_beat.reacquire()

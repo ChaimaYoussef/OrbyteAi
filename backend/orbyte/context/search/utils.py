@@ -20,7 +20,9 @@ from orbyte.natural_language_processing.query_embedding_cache import (
 from orbyte.natural_language_processing.query_embedding_cache import (
     get_cached_query_embeddings,
 )
-from orbyte.natural_language_processing.query_embedding_cache import record_cache_skipped
+from orbyte.natural_language_processing.query_embedding_cache import (
+    record_cache_skipped,
+)
 from orbyte.natural_language_processing.search_nlp_models import EmbeddingModel
 from orbyte.utils.logger import setup_logger
 from orbyte.utils.timing import log_function_time

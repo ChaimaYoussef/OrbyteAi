@@ -63,7 +63,9 @@ from orbyte.orbytebot.slack.constants import SHOW_EVERYONE_ACTION_ID
 from orbyte.orbytebot.slack.constants import VIEW_DOC_FEEDBACK_ID
 from orbyte.orbytebot.slack.handlers.handle_buttons import handle_doc_feedback_button
 from orbyte.orbytebot.slack.handlers.handle_buttons import handle_followup_button
-from orbyte.orbytebot.slack.handlers.handle_buttons import handle_followup_resolved_button
+from orbyte.orbytebot.slack.handlers.handle_buttons import (
+    handle_followup_resolved_button,
+)
 from orbyte.orbytebot.slack.handlers.handle_buttons import handle_generate_answer_button
 from orbyte.orbytebot.slack.handlers.handle_buttons import (
     handle_publish_ephemeral_message_button,

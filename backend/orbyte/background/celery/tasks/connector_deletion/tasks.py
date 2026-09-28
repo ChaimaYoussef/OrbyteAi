@@ -167,7 +167,9 @@ def check_for_connector_deletion_task(self: Task, *, tenant_id: str) -> bool | N
                     "Exception while validating connector deletion fences"
                 )
 
-            r.set(OrbyteRedisSignals.BLOCK_VALIDATE_CONNECTOR_DELETION_FENCES, 1, ex=300)
+            r.set(
+                OrbyteRedisSignals.BLOCK_VALIDATE_CONNECTOR_DELETION_FENCES, 1, ex=300
+            )
 
         # collect cc_pair_ids and note whether any are in DELETING status
         cc_pair_ids: list[int] = []

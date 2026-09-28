@@ -3,7 +3,9 @@
 import pytest
 
 from orbyte.configs.constants import DocumentSource
-from orbyte.tools.tool_implementations.open_url.open_url_tool import _url_lookup_variants
+from orbyte.tools.tool_implementations.open_url.open_url_tool import (
+    _url_lookup_variants,
+)
 from orbyte.tools.tool_implementations.open_url.url_normalization import (
     _detect_source_type,
 )

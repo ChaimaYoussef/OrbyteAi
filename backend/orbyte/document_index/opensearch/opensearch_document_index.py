@@ -34,7 +34,9 @@ from orbyte.document_index.opensearch.client import OpenSearchClient
 from orbyte.document_index.opensearch.client import OpenSearchDocumentMissingError
 from orbyte.document_index.opensearch.client import OpenSearchIndexClient
 from orbyte.document_index.opensearch.client import SearchHit
-from orbyte.document_index.opensearch.cluster_settings import OPENSEARCH_CLUSTER_SETTINGS
+from orbyte.document_index.opensearch.cluster_settings import (
+    OPENSEARCH_CLUSTER_SETTINGS,
+)
 from orbyte.document_index.opensearch.constants import OpenSearchSearchType
 from orbyte.document_index.opensearch.schema import ACCESS_CONTROL_LIST_FIELD_NAME
 from orbyte.document_index.opensearch.schema import CONTENT_FIELD_NAME

@@ -32,7 +32,9 @@ from uuid import uuid4
 
 from sqlalchemy.orm import Session
 
-from orbyte.background.celery.tasks.user_file_processing.tasks import _user_file_lock_key
+from orbyte.background.celery.tasks.user_file_processing.tasks import (
+    _user_file_lock_key,
+)
 from orbyte.background.celery.tasks.user_file_processing.tasks import (
     _user_file_queued_key,
 )
@@ -247,7 +249,9 @@ class TestTaskExpiry:
             # Every submitted task must carry expires
             for call in mock_app.send_task.call_args_list:
                 assert call.args[0] == OrbyteCeleryTask.PROCESS_SINGLE_USER_FILE
-                assert call.kwargs.get("queue") == OrbyteCeleryQueues.USER_FILE_PROCESSING
+                assert (
+                    call.kwargs.get("queue") == OrbyteCeleryQueues.USER_FILE_PROCESSING
+                )
                 assert (
                     call.kwargs.get("expires")
                     == CELERY_USER_FILE_PROCESSING_TASK_EXPIRES

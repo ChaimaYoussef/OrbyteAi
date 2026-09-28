@@ -25,7 +25,9 @@ from sqlalchemy.orm import Session
 
 from orbyte.configs.constants import DocumentSource
 from orbyte.db.enums import HierarchyNodeType
-from orbyte.db.hierarchy import ensure_source_node_exists as db_ensure_source_node_exists
+from orbyte.db.hierarchy import (
+    ensure_source_node_exists as db_ensure_source_node_exists,
+)
 from orbyte.db.hierarchy import get_all_hierarchy_nodes_for_source
 from orbyte.redis.tenant_redis_client import TenantRedisClient
 from orbyte.utils.logger import setup_logger

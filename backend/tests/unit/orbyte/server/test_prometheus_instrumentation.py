@@ -56,7 +56,9 @@ def test_slow_request_callback_skips_below_threshold() -> None:
 
 def test_slow_request_callback_skips_at_exact_threshold() -> None:
     with (
-        patch("orbyte.server.metrics.slow_requests.SLOW_REQUEST_THRESHOLD_SECONDS", 1.0),
+        patch(
+            "orbyte.server.metrics.slow_requests.SLOW_REQUEST_THRESHOLD_SECONDS", 1.0
+        ),
         patch("orbyte.server.metrics.slow_requests._slow_requests") as mock_counter,
     ):
         info = _make_info(duration=1.0)

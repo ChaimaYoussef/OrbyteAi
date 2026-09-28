@@ -1,13 +1,13 @@
-from pydantic import BaseModel
 from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import HTTPException
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
+from orbyte.auth.permissions import require_permission
 from orbyte.auth.users import current_curator_or_admin_user
 from orbyte.db.engine.sql_engine import get_session
 from orbyte.db.enums import Permission
-from orbyte.auth.permissions import require_permission
 from orbyte.db.models import User
 from orbyte.db.tools import get_tool_by_id
 from orbyte.db.tools import get_tools

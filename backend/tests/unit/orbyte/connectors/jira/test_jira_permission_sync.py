@@ -54,7 +54,9 @@ def test_jira_permission_sync(
     mock_fetch_all_existing_docs_fn: MagicMock,
     mock_fetch_all_existing_docs_ids_fn: MagicMock,
 ) -> None:
-    with patch("orbyte.connectors.jira.connector.build_jira_client") as mock_build_client:
+    with patch(
+        "orbyte.connectors.jira.connector.build_jira_client"
+    ) as mock_build_client:
         mock_build_client.return_value = jira_connector._jira_client
         assert jira_connector._jira_client is not None
         jira_connector._jira_client._options = MagicMock()
@@ -81,7 +83,9 @@ def test_jira_doc_sync_passes_indexing_start(
     indexing_start_dt = datetime(2025, 6, 1, tzinfo=timezone.utc)
     mock_jira_cc_pair.connector.indexing_start = indexing_start_dt
 
-    with patch("orbyte.connectors.jira.connector.build_jira_client") as mock_build_client:
+    with patch(
+        "orbyte.connectors.jira.connector.build_jira_client"
+    ) as mock_build_client:
         mock_build_client.return_value = jira_connector._jira_client
         assert jira_connector._jira_client is not None
         jira_connector._jira_client._options = MagicMock()
@@ -116,7 +120,9 @@ def test_jira_doc_sync_passes_none_when_no_indexing_start(
     """Verify that indexing_start is None when the connector has no indexing_start set."""
     mock_jira_cc_pair.connector.indexing_start = None
 
-    with patch("orbyte.connectors.jira.connector.build_jira_client") as mock_build_client:
+    with patch(
+        "orbyte.connectors.jira.connector.build_jira_client"
+    ) as mock_build_client:
         mock_build_client.return_value = jira_connector._jira_client
         assert jira_connector._jira_client is not None
         jira_connector._jira_client._options = MagicMock()

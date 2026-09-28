@@ -333,7 +333,9 @@ def delete_all_chat_sessions_for_user(
     else:
         db_session.execute(
             update(ChatSession)
-            .where(ChatSession.user_id == user_id, ChatSession.orbytebot_flow.is_(False))
+            .where(
+                ChatSession.user_id == user_id, ChatSession.orbytebot_flow.is_(False)
+            )
             .values(deleted=True)
         )
 

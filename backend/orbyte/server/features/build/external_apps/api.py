@@ -51,7 +51,9 @@ from orbyte.server.features.build.external_apps.models import (
 from orbyte.server.features.build.external_apps.models import ExternalAppAdminResponse
 from orbyte.server.features.build.external_apps.models import ExternalAppUserResponse
 from orbyte.server.features.build.external_apps.models import UpdateExternalAppRequest
-from orbyte.server.features.build.external_apps.models import UpsertUserCredentialsRequest
+from orbyte.server.features.build.external_apps.models import (
+    UpsertUserCredentialsRequest,
+)
 from orbyte.server.features.build.sandbox.factory import get_sandbox_manager
 from orbyte.skills.bundle import read_bundle_file
 from orbyte.skills.ingest import delete_bundle_blob
@@ -480,7 +482,9 @@ def resolve_connect_app_request(
         raise OrbyteError(OrbyteErrorCode.NOT_FOUND, "Connect request not found.")
     sandbox = get_sandbox_by_user_id(db_session, user.id)
     if sandbox is None or sandbox.status != SandboxStatus.RUNNING:
-        raise OrbyteError(OrbyteErrorCode.SERVICE_UNAVAILABLE, "Sandbox is not running.")
+        raise OrbyteError(
+            OrbyteErrorCode.SERVICE_UNAVAILABLE, "Sandbox is not running."
+        )
 
     answered = get_sandbox_manager().answer_connect_app_permission(
         sandbox.id,

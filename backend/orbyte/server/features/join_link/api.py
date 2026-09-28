@@ -5,7 +5,6 @@ from datetime import timezone
 from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import HTTPException
-
 from sqlalchemy.orm import Session
 
 from orbyte.auth.schemas import UserCreate
@@ -35,9 +34,7 @@ router = APIRouter(prefix="/manage")
 public_router = APIRouter(prefix="/join-link")
 
 
-def _require_group_access(
-    db_session: Session, user: User, group_id: int
-) -> None:
+def _require_group_access(db_session: Session, user: User, group_id: int) -> None:
     """Admins may manage join links for any group; curators only for
     groups they curate."""
     if user.role == UserRole.ADMIN:
@@ -63,8 +60,7 @@ def create_group_join_link(
     _require_group_access(db_session, user, group_id)
 
     expires_at = (
-        datetime.now(timezone.utc)
-        + timedelta(hours=create_request.expires_in_hours)
+        datetime.now(timezone.utc) + timedelta(hours=create_request.expires_in_hours)
         if create_request.expires_in_hours is not None
         else None
     )
@@ -142,9 +138,7 @@ async def redeem_join_link(
         email=redeem_request.email,
         password=redeem_request.password,
     )
-    new_user = await user_manager.create(
-        user_create, safe=True, join_token=token
-    )
+    new_user = await user_manager.create(user_create, safe=True, join_token=token)
     await user_manager.on_after_register(new_user)
 
     # Additive + idempotent: a join link targeting a default group (e.g.

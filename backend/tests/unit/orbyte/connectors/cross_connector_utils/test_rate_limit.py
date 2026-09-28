@@ -5,7 +5,9 @@ from typing import cast
 import pytest
 import requests
 
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
     wrap_request_to_handle_ratelimiting,
 )

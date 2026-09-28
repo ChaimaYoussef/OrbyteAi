@@ -41,7 +41,9 @@ from orbyte.server.features.build.sandbox.event_schema import PromptResponse
 from orbyte.server.features.build.sandbox.opencode.event_bus import BUS_CLOSED_SENTINEL
 from orbyte.server.features.build.sandbox.opencode.event_bus import PodEventBus
 from orbyte.server.features.build.sandbox.opencode.serve_client import _TurnState
-from orbyte.server.features.build.sandbox.opencode.serve_client import OpencodeServeClient
+from orbyte.server.features.build.sandbox.opencode.serve_client import (
+    OpencodeServeClient,
+)
 from orbyte.server.features.build.sandbox.opencode.serve_client import (
     translate_opencode_event,
 )

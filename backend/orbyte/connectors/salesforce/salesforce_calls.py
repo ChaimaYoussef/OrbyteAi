@@ -11,7 +11,9 @@ from simple_salesforce.bulk2 import SFBulk2Type
 from simple_salesforce.exceptions import SalesforceRefusedRequest
 from simple_salesforce.format import format_soql
 
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.interfaces import SecondsSinceUnixEpoch
 from orbyte.connectors.salesforce.utils import MODIFIED_FIELD
 from orbyte.connectors.salesforce.utils import validate_sf_identifier

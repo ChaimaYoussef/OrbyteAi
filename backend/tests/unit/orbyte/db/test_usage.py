@@ -125,7 +125,9 @@ class TestIncrementUsage:
 
         mock_session = MagicMock()
 
-        with patch("orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage):
+        with patch(
+            "orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage
+        ):
             increment_usage(mock_session, UsageType.LLM_COST, 50.5)
 
         assert mock_usage.llm_cost_cents == 150.5
@@ -138,7 +140,9 @@ class TestIncrementUsage:
 
         mock_session = MagicMock()
 
-        with patch("orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage):
+        with patch(
+            "orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage
+        ):
             increment_usage(mock_session, UsageType.CHUNKS_INDEXED, 100)
 
         assert mock_usage.chunks_indexed == 600
@@ -150,7 +154,9 @@ class TestIncrementUsage:
 
         mock_session = MagicMock()
 
-        with patch("orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage):
+        with patch(
+            "orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage
+        ):
             increment_usage(mock_session, UsageType.API_CALLS, 1)
 
         assert mock_usage.api_calls == 11
@@ -162,7 +168,9 @@ class TestIncrementUsage:
 
         mock_session = MagicMock()
 
-        with patch("orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage):
+        with patch(
+            "orbyte.db.usage.get_or_create_tenant_usage", return_value=mock_usage
+        ):
             increment_usage(mock_session, UsageType.NON_STREAMING_API_CALLS, 1)
 
         assert mock_usage.non_streaming_api_calls == 6

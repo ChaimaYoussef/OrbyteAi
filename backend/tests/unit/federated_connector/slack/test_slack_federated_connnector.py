@@ -8,7 +8,9 @@ import pytest
 from pydantic import ValidationError
 
 from orbyte.federated_connectors.models import OAuthResult
-from orbyte.federated_connectors.slack.federated_connector import SlackFederatedConnector
+from orbyte.federated_connectors.slack.federated_connector import (
+    SlackFederatedConnector,
+)
 from orbyte.federated_connectors.slack.models import SlackEntities
 
 # Constants for mock Slack OAuth response

@@ -109,7 +109,9 @@ def _mock_response(chunks: Iterable[bytes], status_code: int = 200) -> MagicMock
 class TestDownloadGithubRepo:
     def test_returns_concatenated_body(self) -> None:
         response = _mock_response([b"foo", b"bar", b"baz"])
-        with patch("orbyte.utils.github.requests.get", return_value=response) as mock_get:
+        with patch(
+            "orbyte.utils.github.requests.get", return_value=response
+        ) as mock_get:
             result = download_github_repo("onyx-dot-app/onyx")
 
         assert result == b"foobarbaz"
@@ -122,7 +124,9 @@ class TestDownloadGithubRepo:
 
     def test_builds_tarball_url_from_owner_and_name(self) -> None:
         response = _mock_response([b""])
-        with patch("orbyte.utils.github.requests.get", return_value=response) as mock_get:
+        with patch(
+            "orbyte.utils.github.requests.get", return_value=response
+        ) as mock_get:
             download_github_repo("https://github.com/onyx-dot-app/onyx.git")
 
         called_url = mock_get.call_args.args[0]
@@ -132,7 +136,9 @@ class TestDownloadGithubRepo:
 
     def test_sets_authorization_header_when_token_provided(self) -> None:
         response = _mock_response([b""])
-        with patch("orbyte.utils.github.requests.get", return_value=response) as mock_get:
+        with patch(
+            "orbyte.utils.github.requests.get", return_value=response
+        ) as mock_get:
             download_github_repo("onyx-dot-app/onyx", github_token="ghp_secret")
 
         headers = mock_get.call_args.kwargs["headers"]
@@ -141,7 +147,9 @@ class TestDownloadGithubRepo:
 
     def test_omits_authorization_header_when_no_token(self) -> None:
         response = _mock_response([b""])
-        with patch("orbyte.utils.github.requests.get", return_value=response) as mock_get:
+        with patch(
+            "orbyte.utils.github.requests.get", return_value=response
+        ) as mock_get:
             download_github_repo("onyx-dot-app/onyx")
 
         headers = mock_get.call_args.kwargs["headers"]
@@ -149,7 +157,9 @@ class TestDownloadGithubRepo:
 
     def test_uses_streaming_with_split_timeout(self) -> None:
         response = _mock_response([b""])
-        with patch("orbyte.utils.github.requests.get", return_value=response) as mock_get:
+        with patch(
+            "orbyte.utils.github.requests.get", return_value=response
+        ) as mock_get:
             download_github_repo("onyx-dot-app/onyx")
 
         kwargs = mock_get.call_args.kwargs

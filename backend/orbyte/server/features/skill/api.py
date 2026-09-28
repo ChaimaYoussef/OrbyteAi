@@ -427,7 +427,9 @@ def remove_current_user_skill_file(
     if skill is None:
         raise OrbyteError(OrbyteErrorCode.NOT_FOUND, "Skill not found")
     if not path:
-        raise OrbyteError(OrbyteErrorCode.INVALID_INPUT, "Skill file path cannot be empty")
+        raise OrbyteError(
+            OrbyteErrorCode.INVALID_INPUT, "Skill file path cannot be empty"
+        )
 
     updated_bundle_bytes = update_custom_bundle_files(
         read_custom_skill_bundle_bytes(skill),

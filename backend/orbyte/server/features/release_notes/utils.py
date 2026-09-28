@@ -12,7 +12,9 @@ from orbyte.cache.factory import get_shared_cache_backend
 from orbyte.configs.app_configs import INSTANCE_TYPE
 from orbyte.configs.constants import OrbyteRedisLocks
 from orbyte.db.release_notes import create_release_notifications_for_versions
-from orbyte.server.features.release_notes.constants import AUTO_REFRESH_THRESHOLD_SECONDS
+from orbyte.server.features.release_notes.constants import (
+    AUTO_REFRESH_THRESHOLD_SECONDS,
+)
 from orbyte.server.features.release_notes.constants import FETCH_TIMEOUT
 from orbyte.server.features.release_notes.constants import GITHUB_CHANGELOG_RAW_URL
 from orbyte.server.features.release_notes.constants import REDIS_CACHE_TTL

@@ -84,7 +84,9 @@ class TestForwardToControlPlane:
 
     @pytest.mark.asyncio
     @patch("ee.orbyte.server.tenants.proxy.generate_data_plane_token")
-    @patch("ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test")
+    @patch(
+        "ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test"
+    )
     async def test_forwards_post_request(
         self,
         mock_token: MagicMock,
@@ -107,7 +109,9 @@ class TestForwardToControlPlane:
 
     @pytest.mark.asyncio
     @patch("ee.orbyte.server.tenants.proxy.generate_data_plane_token")
-    @patch("ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test")
+    @patch(
+        "ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test"
+    )
     async def test_forwards_get_request(
         self,
         mock_token: MagicMock,
@@ -130,7 +134,9 @@ class TestForwardToControlPlane:
 
     @pytest.mark.asyncio
     @patch("ee.orbyte.server.tenants.proxy.generate_data_plane_token")
-    @patch("ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test")
+    @patch(
+        "ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test"
+    )
     async def test_raises_on_http_error(
         self,
         mock_token: MagicMock,
@@ -156,7 +162,9 @@ class TestForwardToControlPlane:
 
     @pytest.mark.asyncio
     @patch("ee.orbyte.server.tenants.proxy.generate_data_plane_token")
-    @patch("ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test")
+    @patch(
+        "ee.orbyte.server.tenants.proxy.CONTROL_PLANE_API_BASE_URL", "https://cp.test"
+    )
     async def test_raises_on_connection_error(
         self,
         mock_token: MagicMock,

@@ -4,7 +4,9 @@ from collections.abc import Callable
 from uuid import UUID
 from uuid import uuid4
 
-from orbyte.server.features.build.interactive_turns.state import acquire_active_turn_lock
+from orbyte.server.features.build.interactive_turns.state import (
+    acquire_active_turn_lock,
+)
 from orbyte.server.features.build.interactive_turns.state import claim_turn_for_runner
 from orbyte.server.features.build.interactive_turns.state import create_interactive_turn
 from orbyte.server.features.build.interactive_turns.state import finish_turn

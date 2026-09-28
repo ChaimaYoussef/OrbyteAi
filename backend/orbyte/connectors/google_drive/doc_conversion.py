@@ -18,7 +18,9 @@ from orbyte.connectors.cross_connector_utils.section_utils import cap_sections_t
 from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
     extract_and_stage_tabular_file,
 )
-from orbyte.connectors.cross_connector_utils.tabular_section_utils import is_tabular_file
+from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
+    is_tabular_file,
+)
 from orbyte.connectors.google_drive.constants import DRIVE_FOLDER_TYPE
 from orbyte.connectors.google_drive.constants import DRIVE_SHORTCUT_TYPE
 from orbyte.connectors.google_drive.file_retrieval import add_drive_resource_key_header

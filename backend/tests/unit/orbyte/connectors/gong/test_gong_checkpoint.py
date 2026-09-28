@@ -525,7 +525,9 @@ class TestGongConnectorCheckpoint:
             pending_retry_after=retry_after,
         )
 
-        with patch("orbyte.connectors.gong.connector.time.time", return_value=fixed_now):
+        with patch(
+            "orbyte.connectors.gong.connector.time.time", return_value=fixed_now
+        ):
             generator = connector.load_from_checkpoint(0, fixed_now, checkpoint)
             try:
                 while True:

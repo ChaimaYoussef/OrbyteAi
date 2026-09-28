@@ -8,7 +8,9 @@ from simple_salesforce.exceptions import SalesforceRefusedRequest
 from simple_salesforce.format import format_soql
 from urllib3.util.retry import Retry
 
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.salesforce.blacklist import SALESFORCE_BLACKLISTED_OBJECTS
 from orbyte.connectors.salesforce.blacklist import SALESFORCE_BLACKLISTED_PREFIXES
 from orbyte.connectors.salesforce.blacklist import SALESFORCE_BLACKLISTED_SUFFIXES

@@ -19,9 +19,13 @@ from orbyte.file_store.models import InMemoryChatFile
 from orbyte.server.query_and_chat.placement import Placement
 from orbyte.tools.models import ToolCallException
 from orbyte.tools.tool_implementations.file_reader.file_reader_tool import FILE_ID_FIELD
-from orbyte.tools.tool_implementations.file_reader.file_reader_tool import FileReaderTool
+from orbyte.tools.tool_implementations.file_reader.file_reader_tool import (
+    FileReaderTool,
+)
 from orbyte.tools.tool_implementations.file_reader.file_reader_tool import MAX_NUM_CHARS
-from orbyte.tools.tool_implementations.file_reader.file_reader_tool import NUM_CHARS_FIELD
+from orbyte.tools.tool_implementations.file_reader.file_reader_tool import (
+    NUM_CHARS_FIELD,
+)
 from orbyte.tools.tool_implementations.file_reader.file_reader_tool import (
     START_CHAR_FIELD,
 )

@@ -482,7 +482,9 @@ class OrbyteConfluence:
         if "confluence_refresh_token" in credentials:
             logger.info("Connecting to Confluence Cloud with OAuth Access Token.")
 
-            oauth2_dict: dict[str, Any] = OrbyteConfluence._make_oauth2_dict(credentials)
+            oauth2_dict: dict[str, Any] = OrbyteConfluence._make_oauth2_dict(
+                credentials
+            )
             url = f"https://api.atlassian.com/ex/confluence/{credentials['cloud_id']}"
             confluence = Confluence(url=url, oauth2=oauth2_dict, **kwargs)
         else:

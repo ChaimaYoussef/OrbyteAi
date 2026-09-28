@@ -22,7 +22,9 @@ from sqlalchemy import inspect
 from sqlalchemy.orm import Session
 
 from orbyte.configs.constants import FederatedConnectorSource
-from orbyte.context.search.federated.slack_search import fetch_and_cache_channel_metadata
+from orbyte.context.search.federated.slack_search import (
+    fetch_and_cache_channel_metadata,
+)
 from orbyte.db.models import DocumentSet
 from orbyte.db.models import FederatedConnector
 from orbyte.db.models import FederatedConnector__DocumentSet

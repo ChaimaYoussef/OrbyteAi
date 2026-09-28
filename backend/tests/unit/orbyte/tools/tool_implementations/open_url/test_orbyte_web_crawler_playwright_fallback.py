@@ -13,7 +13,9 @@ from unittest.mock import patch
 
 import orbyte.tools.tool_implementations.open_url.orbyte_web_crawler as crawler_module
 from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import FailureReason
-from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import OrbyteWebCrawler
+from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
+    OrbyteWebCrawler,
+)
 from orbyte.utils.playwright_fetch import RenderedPage
 
 SUCCESS_HTML = "<html><head><title>Real Page</title></head><body><p>Hello world, this is real content from the page after rendering.</p></body></html>"
@@ -61,7 +63,9 @@ def _ok_rendered() -> RenderedPage:
 # ---------------------------------------------------------------------------
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_403_triggers_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -79,7 +83,9 @@ def test_403_triggers_playwright_fallback(
     assert result.title == "Real Page"
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_4xx_with_cf_ray_triggers_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -95,7 +101,9 @@ def test_4xx_with_cf_ray_triggers_playwright_fallback(
     assert result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_4xx_with_cf_mitigated_triggers_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -110,7 +118,9 @@ def test_4xx_with_cf_mitigated_triggers_playwright_fallback(
     mock_render.assert_called_once()
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_4xx_with_server_cloudflare_triggers_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -130,7 +140,9 @@ def test_4xx_with_server_cloudflare_triggers_playwright_fallback(
 # ---------------------------------------------------------------------------
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_2xx_skips_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -145,7 +157,9 @@ def test_2xx_skips_playwright_fallback(
     assert result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_404_without_cloudflare_signals_skips_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -158,7 +172,9 @@ def test_404_without_cloudflare_signals_skips_playwright_fallback(
     assert not result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_401_without_cloudflare_signals_skips_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -170,7 +186,9 @@ def test_401_without_cloudflare_signals_skips_playwright_fallback(
     mock_render.assert_not_called()
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_500_without_cloudflare_signals_skips_playwright_fallback(
     mock_get: MagicMock, mock_render: MagicMock
@@ -187,7 +205,9 @@ def test_500_without_cloudflare_signals_skips_playwright_fallback(
 # ---------------------------------------------------------------------------
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_fallback_disabled_skips_playwright(
     mock_get: MagicMock, mock_render: MagicMock
@@ -201,7 +221,9 @@ def test_fallback_disabled_skips_playwright(
     assert not result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_fallback_render_returns_none_yields_failure(
     mock_get: MagicMock, mock_render: MagicMock
@@ -216,7 +238,9 @@ def test_fallback_render_returns_none_yields_failure(
     assert not result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_fallback_returns_empty_page_yields_failure(
     mock_get: MagicMock, mock_render: MagicMock
@@ -233,7 +257,9 @@ def test_fallback_returns_empty_page_yields_failure(
     assert not result.scrape_successful
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_fallback_respects_max_html_size(
     mock_get: MagicMock, mock_render: MagicMock
@@ -258,7 +284,9 @@ def test_fallback_respects_max_html_size(
 # ---------------------------------------------------------------------------
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_rendered_cloudflare_challenge_body_yields_failure_with_reason(
     mock_get: MagicMock, mock_render: MagicMock
@@ -278,7 +306,9 @@ def test_rendered_cloudflare_challenge_body_yields_failure_with_reason(
     assert result.failure_reason == FailureReason.CLOUDFLARE_CHALLENGE
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_render_failure_with_cf_signals_yields_cloudflare_reason(
     mock_get: MagicMock, mock_render: MagicMock
@@ -296,7 +326,9 @@ def test_render_failure_with_cf_signals_yields_cloudflare_reason(
     assert result.failure_reason == FailureReason.CLOUDFLARE_CHALLENGE
 
 
-@patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html")
+@patch(
+    "orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.fetch_rendered_html"
+)
 @patch("orbyte.tools.tool_implementations.open_url.orbyte_web_crawler.ssrf_safe_get")
 def test_bare_403_without_cf_signals_yields_generic_403_reason(
     mock_get: MagicMock, mock_render: MagicMock

@@ -91,7 +91,9 @@ class UserGroupSnapshot(BaseModel):
                 DocumentSetSummary.from_model(document_set)
                 for document_set in group.document_sets
             ],
-            personas=[PersonaSnapshot.from_model(persona) for persona in group.personas],
+            personas=[
+                PersonaSnapshot.from_model(persona) for persona in group.personas
+            ],
             is_up_to_date=group.is_up_to_date,
             is_up_for_deletion=group.is_up_for_deletion,
             is_default=group.is_default,

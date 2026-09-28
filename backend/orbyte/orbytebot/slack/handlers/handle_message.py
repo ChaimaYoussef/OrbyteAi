@@ -17,7 +17,9 @@ from orbyte.error_handling.error_codes import OrbyteErrorCode
 from orbyte.error_handling.exceptions import OrbyteError
 from orbyte.orbytebot.slack.blocks import get_feedback_reminder_blocks
 from orbyte.orbytebot.slack.handlers.handle_regular_answer import handle_regular_answer
-from orbyte.orbytebot.slack.handlers.handle_standard_answers import handle_standard_answers
+from orbyte.orbytebot.slack.handlers.handle_standard_answers import (
+    handle_standard_answers,
+)
 from orbyte.orbytebot.slack.models import SlackMessageInfo
 from orbyte.orbytebot.slack.utils import fetch_slack_user_ids_from_emails
 from orbyte.orbytebot.slack.utils import fetch_user_ids_from_groups

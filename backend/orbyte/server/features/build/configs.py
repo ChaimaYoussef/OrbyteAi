@@ -145,7 +145,9 @@ SANDBOX_DOCKER_SOCKET = os.environ.get("SANDBOX_DOCKER_SOCKET", "/var/run/docker
 
 # Sandbox containers join only this network and never compose's default network,
 # isolating them from api_server, postgres, redis, etc.
-SANDBOX_DOCKER_NETWORK = os.environ.get("SANDBOX_DOCKER_NETWORK", "orbyte_craft_sandbox")
+SANDBOX_DOCKER_NETWORK = os.environ.get(
+    "SANDBOX_DOCKER_NETWORK", "orbyte_craft_sandbox"
+)
 
 SANDBOX_DOCKER_VOLUME_PREFIX = os.environ.get(
     "SANDBOX_DOCKER_VOLUME_PREFIX", "orbyte-craft-sandbox-"

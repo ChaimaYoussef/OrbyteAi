@@ -24,8 +24,12 @@ _SLACK_LIMIT = 900
 
 # used to serialize access to the retry TTL
 ORBYTE_SLACK_LOCK_TTL = 1800  # how long the lock is allowed to idle before it expires
-ORBYTE_SLACK_LOCK_BLOCKING_TIMEOUT = 60  # how long to wait for the lock per wait attempt
-ORBYTE_SLACK_LOCK_TOTAL_BLOCKING_TIMEOUT = 3600  # how long to wait for the lock in total
+ORBYTE_SLACK_LOCK_BLOCKING_TIMEOUT = (
+    60  # how long to wait for the lock per wait attempt
+)
+ORBYTE_SLACK_LOCK_TOTAL_BLOCKING_TIMEOUT = (
+    3600  # how long to wait for the lock in total
+)
 
 
 @lru_cache()

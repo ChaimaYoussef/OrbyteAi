@@ -28,13 +28,19 @@ from orbyte.server.features.build.db.sandbox import update_sandbox_heartbeat
 from orbyte.server.features.build.interactive_turns.executor import (
     start_interactive_turn_runner,
 )
-from orbyte.server.features.build.interactive_turns.models import InteractiveTurnResponse
-from orbyte.server.features.build.interactive_turns.state import acquire_active_turn_lock
+from orbyte.server.features.build.interactive_turns.models import (
+    InteractiveTurnResponse,
+)
+from orbyte.server.features.build.interactive_turns.state import (
+    acquire_active_turn_lock,
+)
 from orbyte.server.features.build.interactive_turns.state import create_interactive_turn
 from orbyte.server.features.build.interactive_turns.state import finish_turn
 from orbyte.server.features.build.interactive_turns.state import get_active_turn
 from orbyte.server.features.build.interactive_turns.state import get_turn_for_request
-from orbyte.server.features.build.interactive_turns.state import InteractiveTurnLockError
+from orbyte.server.features.build.interactive_turns.state import (
+    InteractiveTurnLockError,
+)
 from orbyte.server.features.build.interactive_turns.state import TURN_STATUS_FAILED
 from orbyte.server.features.build.session.errors import RateLimitError
 from orbyte.server.features.build.session.manager import SessionManager

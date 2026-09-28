@@ -54,7 +54,9 @@ from orbyte.db.scheduled_task import mark_run_status
 from orbyte.server.features.build.scheduled_tasks.executor import (
     DEFAULT_EXECUTOR_BUDGET_SECONDS,
 )
-from orbyte.server.features.build.scheduled_tasks.executor import run_scheduled_task_logic
+from orbyte.server.features.build.scheduled_tasks.executor import (
+    run_scheduled_task_logic,
+)
 from orbyte.server.features.build.utils import is_craft_enabled_for_user
 from orbyte.server.settings.store import load_settings
 

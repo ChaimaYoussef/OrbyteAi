@@ -25,7 +25,9 @@ def test_mobile_routes_registered_under_google_oauth(
     monkeypatch.setattr(orbyte_main, "OAUTH_CLIENT_ID", "test-client-id")
     monkeypatch.setattr(orbyte_main, "OAUTH_CLIENT_SECRET", "test-client-secret")
 
-    paths = {getattr(route, "path", "") for route in orbyte_main.get_application().routes}
+    paths = {
+        getattr(route, "path", "") for route in orbyte_main.get_application().routes
+    }
 
     # Dedicated OAuth router (callback routes to the api_server, not the web app)
     # plus the gateway's exchange that swaps the one-time code for the token.

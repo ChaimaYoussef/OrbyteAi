@@ -1,7 +1,9 @@
 from collections.abc import Generator
 
 from ee.orbyte.db.external_perm import ExternalUserGroup
-from ee.orbyte.external_permissions.confluence.constants import ALL_CONF_EMAILS_GROUP_NAME
+from ee.orbyte.external_permissions.confluence.constants import (
+    ALL_CONF_EMAILS_GROUP_NAME,
+)
 from orbyte.background.error_logging import emit_background_error
 from orbyte.configs.app_configs import CONFLUENCE_USE_ORBYTE_USERS_FOR_GROUP_SYNC
 from orbyte.connectors.confluence.orbyte_confluence import (
@@ -161,7 +163,9 @@ def confluence_group_sync(
     tenant_id: str,
     cc_pair: ConnectorCredentialPair,
 ) -> Generator[ExternalUserGroup, None, None]:
-    provider = OrbyteDBCredentialsProvider(tenant_id, "confluence", cc_pair.credential_id)
+    provider = OrbyteDBCredentialsProvider(
+        tenant_id, "confluence", cc_pair.credential_id
+    )
     is_cloud = cc_pair.connector.connector_specific_config.get("is_cloud", False)
     scoped_token = cc_pair.connector.connector_specific_config.get(
         "scoped_token", False

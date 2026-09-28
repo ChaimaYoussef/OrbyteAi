@@ -131,7 +131,9 @@ def test_paid_tenant_bypasses_invite_counter(
 
 _COMMON_PATCHES = [
     patch("orbyte.server.manage.users.MULTI_TENANT", False),
-    patch("orbyte.server.manage.users.get_current_tenant_id", return_value="test_tenant"),
+    patch(
+        "orbyte.server.manage.users.get_current_tenant_id", return_value="test_tenant"
+    ),
     patch("orbyte.server.manage.users.get_invited_users", return_value=[]),
     patch("orbyte.server.manage.users.get_all_users", return_value=[]),
     patch("orbyte.server.manage.users.write_invited_users", return_value=1),
@@ -180,7 +182,9 @@ def test_bulk_invite_emits_user_create(
 @patch("orbyte.server.manage.users.MULTI_TENANT", False)
 @patch("orbyte.server.manage.users.ENABLE_EMAIL_INVITES", False)
 @patch("orbyte.server.manage.users.get_current_tenant_id", return_value="test_tenant")
-@patch("orbyte.server.manage.users.get_invited_users", return_value=["known@example.com"])
+@patch(
+    "orbyte.server.manage.users.get_invited_users", return_value=["known@example.com"]
+)
 @patch("orbyte.server.manage.users.get_all_users", return_value=[])
 @patch("orbyte.server.manage.users.write_invited_users", return_value=1)
 @patch("orbyte.server.manage.users.enforce_seat_limit_locked")

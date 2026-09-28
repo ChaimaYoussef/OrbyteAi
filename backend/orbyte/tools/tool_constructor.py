@@ -21,7 +21,9 @@ from orbyte.tools.models import SearchToolUsage
 from orbyte.tools.tool_implementations.coding_agent.coding_agent_tool import (
     CodingAgentTool,
 )
-from orbyte.tools.tool_implementations.file_reader.file_reader_tool import FileReaderTool
+from orbyte.tools.tool_implementations.file_reader.file_reader_tool import (
+    FileReaderTool,
+)
 from orbyte.tools.tool_implementations.memory.memory_tool import MemoryTool
 from orbyte.tools.tool_implementations.open_url.open_url_tool import OpenURLTool
 from orbyte.tools.tool_implementations.search.search_tool import SearchTool

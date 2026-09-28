@@ -36,7 +36,9 @@ from orbyte.background.celery.tasks.docprocessing.targeted_reindex_task import (
     targeted_reindex_task,
 )
 from orbyte.background.celery.tasks.docprocessing.utils import IndexingCallback
-from orbyte.background.celery.tasks.docprocessing.utils import is_in_repeated_error_state
+from orbyte.background.celery.tasks.docprocessing.utils import (
+    is_in_repeated_error_state,
+)
 from orbyte.background.celery.tasks.docprocessing.utils import should_index
 from orbyte.background.celery.tasks.models import DocProcessingContext
 from orbyte.background.indexing.checkpointing_utils import cleanup_checkpoint
@@ -124,9 +126,13 @@ from orbyte.redis.redis_pool import SCAN_ITER_COUNT_DEFAULT
 from orbyte.redis.redis_tenant_work_gating import maybe_mark_tenant_active
 from orbyte.redis.redis_utils import is_fence
 from orbyte.redis.tenant_redis_client import TenantRedisClient
-from orbyte.server.metrics.connector_health_metrics import on_connector_error_state_change
+from orbyte.server.metrics.connector_health_metrics import (
+    on_connector_error_state_change,
+)
 from orbyte.server.metrics.connector_health_metrics import on_connector_indexing_success
-from orbyte.server.metrics.connector_health_metrics import on_index_attempt_status_change
+from orbyte.server.metrics.connector_health_metrics import (
+    on_index_attempt_status_change,
+)
 from orbyte.server.runtime.orbyte_runtime import OrbyteRuntime
 from orbyte.utils.logger import setup_logger
 from orbyte.utils.middleware import make_randomized_orbyte_request_id

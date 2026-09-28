@@ -42,7 +42,9 @@ class TestGuildRegistrationCommand:
             patch(
                 "orbyte.orbytebot.discord.handle_commands.get_guild_config_by_registration_key"
             ) as mock_get_config,
-            patch("orbyte.orbytebot.discord.handle_commands.bulk_create_channel_configs"),
+            patch(
+                "orbyte.orbytebot.discord.handle_commands.bulk_create_channel_configs"
+            ),
         ):
             mock_db = MagicMock()
             mock_session.return_value.__enter__ = MagicMock(return_value=mock_db)

@@ -1,6 +1,8 @@
 from unittest import mock
 
-from orbyte.connectors.confluence.orbyte_confluence import extract_text_from_confluence_html
+from orbyte.connectors.confluence.orbyte_confluence import (
+    extract_text_from_confluence_html,
+)
 
 
 def _make_confluence_object(html: str) -> dict:

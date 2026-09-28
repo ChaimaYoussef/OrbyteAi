@@ -15,7 +15,9 @@ from kubernetes import client
 from orbyte.configs.constants import MessageType
 from orbyte.server.features.build.configs import SANDBOX_BACKEND
 from orbyte.server.features.build.configs import SandboxBackend
-from orbyte.server.features.build.interactive_turns.models import InteractiveTurnResponse
+from orbyte.server.features.build.interactive_turns.models import (
+    InteractiveTurnResponse,
+)
 from orbyte.server.features.build.sandbox.kubernetes.kubernetes_sandbox_manager import (
     KubernetesSandboxManager,
 )

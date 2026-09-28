@@ -57,9 +57,7 @@ def insert_user_group(
         db_session.flush()  # assign an id
 
         for user_id in set(user_ids):
-            db_session.add(
-                User__UserGroup(user_group_id=new_group.id, user_id=user_id)
-            )
+            db_session.add(User__UserGroup(user_group_id=new_group.id, user_id=user_id))
         for cc_pair_id in set(cc_pair_ids):
             db_session.add(
                 UserGroup__ConnectorCredentialPair(
@@ -155,9 +153,7 @@ def add_users_to_user_group(
     try:
         for user_id in set(user_ids):
             if user_id not in existing_user_ids:
-                db_session.add(
-                    User__UserGroup(user_group_id=group_id, user_id=user_id)
-                )
+                db_session.add(User__UserGroup(user_group_id=group_id, user_id=user_id))
         db_session.commit()
     except Exception as e:
         db_session.rollback()
@@ -190,9 +186,7 @@ def delete_user_group(db_session: Session, group: UserGroup) -> None:
 
     try:
         db_session.execute(
-            delete(User__UserGroup).where(
-                User__UserGroup.user_group_id == group.id
-            )
+            delete(User__UserGroup).where(User__UserGroup.user_group_id == group.id)
         )
         db_session.execute(
             delete(UserGroup__ConnectorCredentialPair).where(
@@ -239,15 +233,11 @@ def update_group_agent_sharing(
         for persona_id in added_agent_ids:
             if persona_id not in existing_persona_ids:
                 db_session.add(
-                    Persona__UserGroup(
-                        persona_id=persona_id, user_group_id=group_id
-                    )
+                    Persona__UserGroup(persona_id=persona_id, user_group_id=group_id)
                 )
 
         db_session.commit()
     except Exception as e:
         db_session.rollback()
-        logger.error(
-            "Error updating agent sharing for user group %s: %s", group_id, e
-        )
+        logger.error("Error updating agent sharing for user group %s: %s", group_id, e)
         raise

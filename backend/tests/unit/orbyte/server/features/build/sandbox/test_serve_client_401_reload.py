@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import httpx
 
-from orbyte.server.features.build.sandbox.opencode.serve_client import OpencodeServeClient
+from orbyte.server.features.build.sandbox.opencode.serve_client import (
+    OpencodeServeClient,
+)
 
 
 def test_request_reloads_password_on_401_and_retries() -> None:

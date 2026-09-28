@@ -12,7 +12,9 @@ from orbyte.db.connector_credential_pair import (
     fetch_indexable_standard_connector_credential_pair_ids,
 )
 from orbyte.db.connector_credential_pair import get_connector_credential_pairs
-from orbyte.db.connector_credential_pair import get_last_successful_attempt_poll_range_end
+from orbyte.db.connector_credential_pair import (
+    get_last_successful_attempt_poll_range_end,
+)
 from orbyte.db.connector_credential_pair import resync_cc_pair
 from orbyte.db.engine.sql_engine import get_session
 from orbyte.db.enums import Permission

@@ -13,7 +13,9 @@ from orbyte.configs.app_configs import INDEX_BATCH_SIZE
 from orbyte.configs.app_configs import REQUEST_TIMEOUT_SECONDS
 from orbyte.configs.constants import DocumentSource
 from orbyte.connectors.cross_connector_utils.miscellaneous_utils import time_str_to_utc
-from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import rate_limit_builder
+from orbyte.connectors.cross_connector_utils.rate_limit_wrapper import (
+    rate_limit_builder,
+)
 from orbyte.connectors.interfaces import GenerateDocumentsOutput
 from orbyte.connectors.interfaces import PollConnector
 from orbyte.connectors.interfaces import SecondsSinceUnixEpoch

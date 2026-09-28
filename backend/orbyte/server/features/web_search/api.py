@@ -27,7 +27,9 @@ from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
 from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
     DEFAULT_MAX_PDF_SIZE_BYTES,
 )
-from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import OrbyteWebCrawler
+from orbyte.tools.tool_implementations.open_url.orbyte_web_crawler import (
+    OrbyteWebCrawler,
+)
 from orbyte.tools.tool_implementations.open_url.utils import (
     filter_web_contents_with_no_title_or_content,
 )

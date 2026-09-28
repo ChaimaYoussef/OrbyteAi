@@ -653,7 +653,9 @@ def update_custom_bundle_files(
                     total_max_bytes=total_max_bytes,
                 )
             if not upload_file_paths:
-                raise OrbyteError(OrbyteErrorCode.INVALID_INPUT, "upload contains no files")
+                raise OrbyteError(
+                    OrbyteErrorCode.INVALID_INPUT, "upload contains no files"
+                )
             if len(upload_file_paths) != len(set(upload_file_paths)):
                 raise OrbyteError(
                     OrbyteErrorCode.INVALID_INPUT, "upload contains duplicate paths"

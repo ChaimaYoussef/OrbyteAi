@@ -79,7 +79,8 @@ def _maybe_prefix_groups(group_names: set[str], add_prefix: bool) -> set[str]:
     if not add_prefix:
         return group_names
     return {
-        build_ext_group_name_for_orbyte(g, DocumentSource.CONFLUENCE) for g in group_names
+        build_ext_group_name_for_orbyte(g, DocumentSource.CONFLUENCE)
+        for g in group_names
     }
 
 

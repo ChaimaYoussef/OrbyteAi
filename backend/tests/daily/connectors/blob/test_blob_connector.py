@@ -9,7 +9,9 @@ import pytest
 
 from orbyte.configs.constants import BlobType
 from orbyte.connectors.blob.connector import BlobStorageConnector
-from orbyte.connectors.cross_connector_utils.tabular_section_utils import is_tabular_file
+from orbyte.connectors.cross_connector_utils.tabular_section_utils import (
+    is_tabular_file,
+)
 from orbyte.connectors.models import Document
 from orbyte.connectors.models import HierarchyNode
 from orbyte.connectors.models import TabularSection

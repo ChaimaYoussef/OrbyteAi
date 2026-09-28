@@ -14,7 +14,9 @@ from uuid import UUID
 
 from orbyte.db.enums import SandboxStatus
 from orbyte.db.enums import SharingScope
-from orbyte.server.features.build.interactive_turns.models import InteractiveTurnResponse
+from orbyte.server.features.build.interactive_turns.models import (
+    InteractiveTurnResponse,
+)
 from orbyte.server.features.build.models import UploadResponse
 from orbyte.server.features.build.sandbox.models import DirectoryListing
 from orbyte.server.features.build.session.models import DetailedSessionResponse

@@ -530,7 +530,9 @@ def test_upload_with_custom_config_then_change(
 
     try:
         # Patch the test_llm method
-        with patch("orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm):
+        with patch(
+            "orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm
+        ):
             run_llm_config_test(
                 LLMTestRequest(
                     provider=provider_name,
@@ -726,7 +728,9 @@ def test_preserves_masked_sensitive_custom_config_on_test_request(
             db_session=db_session,
         )
 
-        with patch("orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm):
+        with patch(
+            "orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm
+        ):
             run_llm_config_test(
                 LLMTestRequest(
                     id=provider.id,
@@ -806,7 +810,9 @@ def test_vertex_workload_identity_provider_create(
         assert "vertex_credentials" not in stored.custom_config
 
         # The LLM built for this provider must not forward vertex_credentials to LiteLLM.
-        with patch("orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm):
+        with patch(
+            "orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm
+        ):
             run_llm_config_test(
                 LLMTestRequest(
                     id=stored.id,
@@ -904,7 +910,9 @@ def test_vertex_service_account_backwards_compat_routes_credentials(
             db_session=db_session,
         )
 
-        with patch("orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm):
+        with patch(
+            "orbyte.server.manage.llm.api.test_llm", side_effect=capture_test_llm
+        ):
             run_llm_config_test(
                 LLMTestRequest(
                     id=stored.id,

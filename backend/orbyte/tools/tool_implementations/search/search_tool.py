@@ -105,9 +105,13 @@ from orbyte.tools.models import ChatMinimalTextMessage
 from orbyte.tools.models import SearchToolOverrideKwargs
 from orbyte.tools.models import ToolCallException
 from orbyte.tools.models import ToolResponse
-from orbyte.tools.tool_implementations.search.constants import KEYWORD_QUERY_HYBRID_ALPHA
+from orbyte.tools.tool_implementations.search.constants import (
+    KEYWORD_QUERY_HYBRID_ALPHA,
+)
 from orbyte.tools.tool_implementations.search.constants import LLM_KEYWORD_QUERY_WEIGHT
-from orbyte.tools.tool_implementations.search.constants import LLM_NON_CUSTOM_QUERY_WEIGHT
+from orbyte.tools.tool_implementations.search.constants import (
+    LLM_NON_CUSTOM_QUERY_WEIGHT,
+)
 from orbyte.tools.tool_implementations.search.constants import LLM_SEMANTIC_QUERY_WEIGHT
 from orbyte.tools.tool_implementations.search.constants import MAX_CHUNKS_FOR_RELEVANCE
 from orbyte.tools.tool_implementations.search.constants import ORIGINAL_QUERY_WEIGHT

@@ -48,7 +48,9 @@ def test_claims_then_resolve_round_trips_minted_pat(
         matched_actions=None,
     )
 
-    monkeypatch.setattr(orbyte_pat_mod, "SANDBOX_API_SERVER_URL", f"https://{_API_HOST}")
+    monkeypatch.setattr(
+        orbyte_pat_mod, "SANDBOX_API_SERVER_URL", f"https://{_API_HOST}"
+    )
     resolver = OrbytePatResolver()
     assert resolver.claims(MagicMock(host=_API_HOST, port=443), ctx) is True
     assert resolver.claims(MagicMock(host="slack.com", port=443), ctx) is False

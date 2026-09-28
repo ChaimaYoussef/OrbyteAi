@@ -69,7 +69,9 @@ def generate_client(openapi_json_path: str, strip_tags: bool = True) -> None:
     """Generate Python client from OpenAPI schema using openapi-generator."""
     import tempfile
 
-    output_dir = os.path.join(os.path.dirname(openapi_json_path), "orbyte_openapi_client")
+    output_dir = os.path.join(
+        os.path.dirname(openapi_json_path), "orbyte_openapi_client"
+    )
 
     # Optionally strip tags so all endpoints go under DefaultApi
     schema_path = openapi_json_path

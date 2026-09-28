@@ -54,7 +54,9 @@ from orbyte.db.models import ConnectorCredentialPair
 from orbyte.db.permission_sync_attempt import complete_external_group_sync_attempt
 from orbyte.db.permission_sync_attempt import create_external_group_sync_attempt
 from orbyte.db.permission_sync_attempt import mark_external_group_sync_attempt_failed
-from orbyte.db.permission_sync_attempt import mark_external_group_sync_attempt_in_progress
+from orbyte.db.permission_sync_attempt import (
+    mark_external_group_sync_attempt_in_progress,
+)
 from orbyte.db.sync_record import insert_sync_record
 from orbyte.db.sync_record import update_sync_record_status
 from orbyte.redis.redis_connector import RedisConnector
@@ -772,7 +774,9 @@ def validate_external_group_sync_fence(
 
     # OK, there's actually something for us to validate
     found = celery_find_task(
-        payload.celery_task_id, OrbyteCeleryQueues.CONNECTOR_EXTERNAL_GROUP_SYNC, r_celery
+        payload.celery_task_id,
+        OrbyteCeleryQueues.CONNECTOR_EXTERNAL_GROUP_SYNC,
+        r_celery,
     )
     if found:
         # the celery task exists in the redis queue

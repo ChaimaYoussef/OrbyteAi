@@ -171,7 +171,9 @@ def test_load_serve_connection_info_yields_none_password_for_legacy() -> None:
     mgr = _bare_manager()
     fake_container = MagicMock()
     fake_container.attrs = {
-        "Config": {"Env": ["ORBYTE_PAT=pat", "ORBYTE_SERVER_URL=https://orbyte.example.com"]}
+        "Config": {
+            "Env": ["ORBYTE_PAT=pat", "ORBYTE_SERVER_URL=https://orbyte.example.com"]
+        }
     }
     mgr._docker = MagicMock()  # type: ignore[attr-defined]
     mgr._docker.containers.get.return_value = fake_container

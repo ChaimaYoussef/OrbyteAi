@@ -98,7 +98,9 @@ class TestLicenseEnforcementMiddleware:
         True,
     )
     @patch("ee.orbyte.server.middleware.license_enforcement.get_current_tenant_id")
-    @patch("ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata")
+    @patch(
+        "ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata"
+    )
     async def test_gated_access_status_gets_402(
         self,
         mock_get_metadata: MagicMock,
@@ -124,7 +126,9 @@ class TestLicenseEnforcementMiddleware:
         True,
     )
     @patch("ee.orbyte.server.middleware.license_enforcement.get_current_tenant_id")
-    @patch("ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata")
+    @patch(
+        "ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata"
+    )
     async def test_grace_period_allows_access(
         self,
         mock_get_metadata: MagicMock,
@@ -156,7 +160,9 @@ class TestLicenseEnforcementMiddleware:
     )
     @patch("ee.orbyte.server.middleware.license_enforcement.refresh_license_cache")
     @patch("ee.orbyte.server.middleware.license_enforcement.get_current_tenant_id")
-    @patch("ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata")
+    @patch(
+        "ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata"
+    )
     async def test_no_license_allows_community_paths(
         self,
         mock_get_metadata: MagicMock,
@@ -183,7 +189,9 @@ class TestLicenseEnforcementMiddleware:
         True,
     )
     @patch("ee.orbyte.server.middleware.license_enforcement.get_current_tenant_id")
-    @patch("ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata")
+    @patch(
+        "ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata"
+    )
     async def test_redis_error_fails_open(
         self,
         mock_get_metadata: MagicMock,
@@ -226,7 +234,9 @@ class TestLicenseEnforcementMiddleware:
         True,
     )
     @patch("ee.orbyte.server.middleware.license_enforcement.get_current_tenant_id")
-    @patch("ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata")
+    @patch(
+        "ee.orbyte.server.middleware.license_enforcement.get_cached_license_metadata"
+    )
     async def test_seat_limit_exceeded_gets_402(
         self,
         mock_get_metadata: MagicMock,

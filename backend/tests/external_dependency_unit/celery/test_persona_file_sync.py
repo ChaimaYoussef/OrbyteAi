@@ -219,9 +219,7 @@ class TestCheckSweepIncludesPersonaSync:
 # Test: process_single_user_file_project_sync passes persona_ids to index
 # ---------------------------------------------------------------------------
 
-_PATCH_GET_SETTINGS = (
-    "orbyte.background.celery.tasks.user_file_processing.tasks.get_active_search_settings"
-)
+_PATCH_GET_SETTINGS = "orbyte.background.celery.tasks.user_file_processing.tasks.get_active_search_settings"
 _PATCH_GET_INDICES = (
     "orbyte.background.celery.tasks.user_file_processing.tasks.get_all_document_indices"
 )

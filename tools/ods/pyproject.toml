@@ -21,7 +21,7 @@ classifiers = [
 dynamic = ["version"]
 dependencies = [
     "fastapi>=0.116.1",
-    "openapi-generator-cli>=7.17.0",
+    "openapi-generator-cli>=7.26.0",
 ]
 
 
